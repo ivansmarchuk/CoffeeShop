@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    font: 14px/20px "Open Sans";
+    width: 100%;
+    height: 100%;
+    color: #242423;
+    background: #ede9e1;
+}
+
+a {
+    color: #242423;
+}
+
+a:hover, a:active, a:focus {
+    color: #cb6c1b;
+    text-decoration: none;
+}
+:focus{
+    outline: none;
+}
+
+/*Styles for icon in topMenu*/
+i[class*="ic-"] {
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/css-sprite.png") no-repeat;
+}
+
+/*icon time*/
+i.ic-time {
+    height: 17px;
+    width: 17px;
+    background-position: 0 0;
+}
+
+/*icon user*/
+i.ic-user {
+    height: 16px;
+    width: 16px;
+    background-position: -17px 0;
+}
+i.ic-search {
+    height: 16px;
+    width: 16px;
+    background-position: -33px 0;
+}
+/*header container -> all top menu*/
+.h-nav {
+    float: left;
+    padding: 10px 0;
+}
+
+.h-nav a {
+    margin-right: 40px;
+    font-size: 14px;
+}
+
+.h-nav a.active {
+    font-weight: 600;
+    color: #cb6c1b;
+}
+/*for icon in top menu*/
+.h-nav a i{
+    margin-right: 3px;
+}
+
+.h-nav a:last-child {
+    margin-right: 0;
+}
+/*header container -> top left menu*/
+.h-nav-tabs {
+    padding: 10px 25px 10px 10px;
+}
+
+.h-nav-tabs a {
+    font-size: 11px;
+    text-transform: uppercase;
+}
+/*header container -> top center menu*/
+/*straight lines in top menus*/
+.h-nav-center {
+    padding: 10px 30px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-color: #d0c8c4;
+}
+/*logo style*/
+.header-bottom{
+    background-color: #FFF;
+    padding: 40px 0 25px;
+}
+/*Search bar*/
+#h-searh{
+    position: relative;
+    max-width: 525px;
+    margin-top: 10px;
+}
+/*search field*/
+#h-searh input[type="text"] {
+    height: 45px;
+    width: 100%;
+    padding: 0 50px 0 20px;
+    font-size: 14px;
+    color: #d0c8c4;
+    border: 1px solid #d0c8c4;
+    border-radius: 15px;
+}
+/*search icon*/
+#h-searh input[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 100%;
+    border: none;
+    background:  transparent url("../img/h-search.png") no-repeat center;
+
+}
