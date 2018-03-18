@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    font: 14px/20px "Open Sans";
+    font: 16px/20px "Open Sans";
     width: 100%;
     height: 100%;
     color: #242423;
@@ -26,33 +26,6 @@ a:hover, a:active, a:focus {
     outline: none;
 }
 
-/*Styles for icon in topMenu*/
-i[class*="ic-"] {
-    display: inline-block;
-    vertical-align: middle;
-    background: url("../img/css-sprite.png") no-repeat;
-}
-
-/*icon time*/
-i.ic-time {
-    height: 17px;
-    width: 16px;
-    background-position: 0 0;
-}
-
-/*icon user*/
-i.ic-user {
-    height: 16px;
-    width: 14px;
-    background-position: -16px 0;
-}
-
-i.ic-search {
-    height: 16px;
-    width: 16px;
-    background-position: -33px 0;
-}
-
 /*header container -> all top menu*/
 .h-nav {
     float: left;
@@ -61,17 +34,17 @@ i.ic-search {
 
 .h-nav a {
     margin-right: 40px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .h-nav a.active {
-    font-weight: 600;
-    color: #934A0E;
+    font-weight: 800;
+    color: #81533A;
 }
 
-/*for icon in top menu*/
-.h-nav a i {
-    margin-right: 3px;
+/*icons in header-top menu*/
+.h-nav a span {
+    margin-right: 5px;
 }
 
 .h-nav a:last-child {
@@ -84,7 +57,8 @@ i.ic-search {
 }
 
 .h-nav-tabs a {
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -133,13 +107,14 @@ i.ic-search {
     background: transparent url("../img/h-search.png") no-repeat center;
 }
 
+/*CustomService style*/
 .h-phone {
     margin-top: 0px;
     float: right;
 }
 
 .h-phone a {
-    padding-left: 50px;
+    padding-left: 55px;
     display: block;
     background: url("../img/h-headphones.png") no-repeat left 5px;
 }
@@ -154,4 +129,113 @@ i.ic-search {
     font-size: 20px;
     font-weight: 800;
     color: #795743;
+}
+
+/*Main Menu*/
+.panel {
+    background: #242423;
+    padding: 5px 0;
+    border-radius: 0;
+}
+
+.panel .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: capitalize;
+    /*border: 1px solid white;*/
+}
+
+.panel .btn:hover {
+    color: #BD661C;
+}
+
+.glyphicon {
+    margin-right: 10px;
+}
+
+.caret {
+    margin-left: 5px !important;
+}
+
+/*Category menu button*/
+.panel-menu-wrap {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.panel-menu-wrap > li {
+    float: left;
+}
+
+.sp {
+
+    border-left: 1px solid #d0c8c4;
+    border-radius: unset;
+}
+
+.panel-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 178px;
+
+}
+
+/*Content*/
+.content {
+    padding: 0;
+}
+
+.product-wrap {
+    border: 1px solid #d0c8c4;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.product {
+   padding: 20px 20px 25px;
+    border-right: 1px solid #d0c8c4;
+    border-bottom: 1px solid #d0c8c4;
+}
+.product:nth-child(3){border-right: none;}
+
+.product-img{
+    text-align: center;
+    height: 235px;
+    border-bottom: 1px solid #d0c8c4;
+    margin-bottom: 15px;
+
+}
+.product-img > img{
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+.product-footer{
+    height: 75px;
+}
+.product-footer h5 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    margin: 0;
+
+}
+.cat {
+    color: #333333;
+    font-size: 10px;
+
+}
+.price{
+    font-size: 14px;
+    font-weight: 900;
+    color: #333333;
+    font-family: "Patua One";
+
 }
