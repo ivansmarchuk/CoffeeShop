@@ -256,11 +256,9 @@ a:hover, a:active, a:focus {
 }
 
 .price {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 20px;
     color: #333333;
     font-family: "Patua One";
-
 }
 
 .review {
@@ -277,5 +275,14 @@ a:hover, a:active, a:focus {
     background: rgba(0, 0, 0, 0.45);
     border-radius: 8px;
     text-align: center;
+}
+
+.product .bottom-panel {
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
