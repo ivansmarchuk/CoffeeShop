@@ -285,4 +285,8 @@ a:hover, a:active, a:focus {
     justify-content: space-between;
     align-items: center;
 }
+.product .bottom-panel .btn {
+    border: 1px solid black;
+
+}
 

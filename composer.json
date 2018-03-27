@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "coffeeshop\\": "vendor/coffeeshop/core",
+      "app\\": "app"
+    }
+  },
+  "require": {
+
+  }
+}
