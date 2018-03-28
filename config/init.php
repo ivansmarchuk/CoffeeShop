@@ -8,7 +8,7 @@ define("CORE", ROOT . '/vendor/coffeeshop/core');
 define("LIBS", ROOT . '/vendor/coffeeshop/core/libs');
 define("CACHE", ROOT . '/tmp/cache');
 define("CONF", ROOT . '/config');
-define("LAYOUT", 'default');
+define("LAYOUT", 'coffee');
 
 //http://localhost/CoffeeShop/public/index.php
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";

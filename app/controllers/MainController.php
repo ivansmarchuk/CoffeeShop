@@ -14,28 +14,14 @@ use coffeeshop\base\Controller;
 use coffeeshop\Cache;
 use \RedBeanPHP\R as R;
 
-class MainController extends AppController {
+class MainController extends AppController
+{
 
-    public function indexAction(){
-
-
-        $posts = R::findAll('test');
-
+    public function indexAction()
+    {
+        $brands = R::find('brand', 'LIMIT 3');
 
         $this->setMeta(App::$app->getProperty('shop_name'), 'Beschreibung', 'Keys');
-
-        $name = 'Ivan';
-        $age =22;
-        $names = ['And', 'Mike', 'Jane'];
-        $cache = Cache::instance();
-        //$cache->set('test', $names);
-        //$cache->delete('test');
-        $data = $cache->get('test');
-        if(!$data){
-            $cache->set('test', $names);
-        }
-        debug($data);
-        $this->set(compact('name', 'age', 'posts'));
+        $this->set(compact('brands'));
     }
-
 }

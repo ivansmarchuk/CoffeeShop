@@ -42,7 +42,7 @@ class View
         if (is_file($viewFile)) {
             ob_start();
             require_once $viewFile;
-            $contect = ob_get_clean();
+            $content = ob_get_clean();
         } else {
             throw new \Exception("{$viewFile} was not found", 500);
         }

@@ -25,7 +25,9 @@ a:hover, a:active, a:focus {
 :focus {
     outline: none;
 }
-
+.relative{
+    position: relative;
+}
 /*header container -> all top menu*/
 .h-nav {
     float: left;
@@ -61,7 +63,16 @@ a:hover, a:active, a:focus {
     font-weight: 600;
     text-transform: uppercase;
 }
+.h-nav > .btn-group > a{
+    cursor: pointer;
+}
+.h-nav > .btn-group.open .dropdown-toggle{
+    box-shadow: none;
 
+}
+.h-nav-menu {
+    margin-top: 10px;
+}
 /*header container -> top center menu*/
 /*straight lines in top menus*/
 .h-nav-center {
@@ -188,9 +199,6 @@ a:hover, a:active, a:focus {
 }
 
 /*Content*/
-.content {
-    padding: 0;
-}
 
 .product-wrap {
     border: 1px solid #d0c8c4;
@@ -290,3 +298,29 @@ a:hover, a:active, a:focus {
 
 }
 
+/*SIDEBAR*/
+.sidebr-item{
+    padding: 20px;
+    border-bottom: 1px solid #d0c8c4;
+}
+
+
+.sidebar-title {
+    margin: 0 0 15px 0;
+    font-weight: 900;
+    color: #293237;
+    text-transform: uppercase;
+}
+
+.sidebar-list,
+.sidebar-list-check {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar-list li {margin-bottom: 10px;}
+.sidebar-list li:last-child {margin-bottom: 0;}
+
+.sidebar-list a.active {
+    color: #934A0E;
+}
