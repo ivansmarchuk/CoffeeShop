@@ -19,5 +19,25 @@ class User extends AppModel
      'address' => '',
      'role' => 'user',
     ];
+    /**
+     * @var array $rules for module valitron
+     */
+    public $rules = [
+      'required' =>[
+          ['login'],
+          ['password'],
+          ['name'],
+          ['email'],
+          ['address'],
+      ],
+        'email' => [
+            ['email'],
+        ],
+
+        'lengthMin' =>[
+            ['password', 6],
+        ]
+
+    ];
 
 }

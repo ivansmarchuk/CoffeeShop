@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <!-- Bootstrap -->
+    <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- CoffeShopStyle -->
 
@@ -37,11 +37,12 @@
                     </nav>
                     <nav class="h-nav pull-right">
                         <div class="btn-group">
-                            <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Mein Konto
+                            <a class="dropdown-toggle" data-toggle="dropdown"><span
+                                        class="glyphicon glyphicon-user"></span>Mein Konto
                             </a>
                             <ul class="dropdown-menu h-nav-menu">
-                                <?php if(!empty($_SESSION['user'])): ?>
-                                    <li><a href="#">Herzlich willkommen, <?=h($_SESSION['user']['name']); ?></a></li>
+                                <?php if (!empty($_SESSION['user'])): ?>
+                                    <li><a href="#">Herzlich willkommen, <?= h($_SESSION['user']['name']); ?></a></li>
                                     <li><a href='#'><span class="glyphicon glyphicon-time"></span>Bestellungen</a></li>
                                     <li><a href="user/logout">Ausloggen</a></li>
                                 <?php else: ?>
@@ -97,8 +98,8 @@
                         <li>
                             <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#"
                                class="btn"><span
-                                    class="glyphicon glyphicon-align-justify"></span>Alle Kategorien<span
-                                    class="caret"></span></a>
+                                        class="glyphicon glyphicon-align-justify"></span>Alle Kategorien<span
+                                        class="caret"></span></a>
                             <ul class="dropdown-menu panel-menu" role="menu" aria-labelledby="dLabel">
                                 <li><a href="#">Neuheiten</a></li>
                                 <li><a href="#">Meistverkauft</a></li>
@@ -152,20 +153,20 @@
                         <h4 class="sidebar-title">Land</h4>
                         <ul class="sidebar-list-check">
                             <li>
-                                <input id="med" type="checkbox" />
-                                <label for="med">Medin</label>
+                                <input id="med" type="checkbox"/>
+                                <label for="med">Land_1</label>
                             </li>
                             <li>
-                                <input id="med" type="checkbox" />
-                                <label for="med">Medin</label>
+                                <input id="med" type="checkbox"/>
+                                <label for="med">Land_2</label>
                             </li>
                             <li>
-                                <input id="med" type="checkbox" />
-                                <label for="med">Medin</label>
+                                <input id="med" type="checkbox"/>
+                                <label for="med">Land_3</label>
                             </li>
                             <li>
-                                <input id="med" type="checkbox" />
-                                <label for="med">Medin</label>
+                                <input id="med" type="checkbox"/>
+                                <label for="med">Land_4</label>
                             </li>
                         </ul>
                     </div>
@@ -174,8 +175,25 @@
                     </div>
                 </div>
             </div>
+
             <div class="container">
-            <?= $content; ?>
+
+                        <div class="col-md-12">
+                            <?php if (isset($_SESSION['error'])): ?>
+                                <div class="alert alert-danger">
+                                    <?php echo $_SESSION['error'];
+                                    unset($_SESSION['error']); ?>
+                                </div>
+                            <?php endif; ?>
+                            <?php if (isset($_SESSION['success'])): ?>
+                                <div class="alert alert-success">
+                                    <?php echo $_SESSION['success'];
+                                    unset($_SESSION['success']); ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                <?= $content; ?>
             </div>
         </div>
     </div>

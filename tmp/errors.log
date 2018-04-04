@@ -1036,3 +1036,5 @@
 ===================
 [2018-04-04 23:47:18] Fehlertext:  Conntroller app\controllers\SdfController is not found | File: C:\xampp\htdocs\CoffeeShop\vendor\coffeeshop\core\Router.php | Line: 57 
 ===================
+[2018-04-05 00:32:21] Fehlertext:  Rule 'lenghtMin' has not been registered with Valitron\Validator::addRule(). | File: C:\xampp\htdocs\CoffeeShop\vendor\vlucas\valitron\src\Valitron\Validator.php | Line: 1134 
+===================
