@@ -37,49 +37,48 @@ class Router
     /**
      * @param $url with matchRoute : if true from matchRoute - get controller, else 404
      */
-    public static function dispatch($url)
-    {
+    public static function dispatch($url){
+
         $url = self::removeQueryString($url);
-        if (self::matchRoute($url)) {
-            $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
-            if (class_exists($controller)) {
+        //echo $url;
+        if(self::matchRoute($url)){
+
+          $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
+            if(class_exists($controller)){
                 $controllerObject = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action']) . 'Action';
-                if (method_exists($controllerObject, $action)) {
+                if(method_exists($controllerObject, $action)){
                     $controllerObject->$action();
                     $controllerObject->getView();
-                } else {
+                }else{
                     throw new \Exception("Method $controller::$action is not found", 404);
                 }
-
-            } else {
+            }else{
                 throw new \Exception("Conntroller $controller is not found", 404);
             }
-
-        } else {
+        }else{
             throw new \Exception("Page not found", 404);
         }
-
     }
+
 
     /**
      * @param $url
      */
-    public static function matchRoute($url)
-    {
-        foreach (self::$routes as $pattern => $route) {
-            if (preg_match("#{$pattern}#", $url, $matches)) {
-                foreach ($matches as $k => $v) {
-                    if (is_string($k)) {
+    public static function matchRoute($url){
+        foreach(self::$routes as $pattern => $route){
+            if(preg_match("#{$pattern}#", $url, $matches)){
+                foreach($matches as $k => $v){
+                    if(is_string($k)){
                         $route[$k] = $v;
                     }
                 }
-                if (empty($route['action'])) {
+                if(empty($route['action'])){
                     $route['action'] = 'index';
                 }
-                if (!isset($route['prefix'])) {
+                if(!isset($route['prefix'])){
                     $route['prefix'] = '';
-                } else {
+                }else{
                     $route['prefix'] .= '\\';
                 }
                 $route['controller'] = self::upperCamelCase($route['controller']);
@@ -95,17 +94,14 @@ class Router
      * converts from camel-case, or camel to CamelCase format
      * @return CamelCase format
      */
-    protected static function upperCamelCase($name)
-    {
+    protected static function upperCamelCase($name){
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
-
     }
 
     /**
      * @return camelCase format
      */
-    protected static function lowerCamelCase($name)
-    {
+    protected static function lowerCamelCase($name){
         return lcfirst(self::upperCamelCase($name));
     }
 
@@ -113,10 +109,9 @@ class Router
     protected static function removeQueryString($url){
         if($url){
             $params = explode('&', $url, 2);
-            if (false === strpos($params[0], '=')){
+            if(false === strpos($params[0], '=')){
                 return rtrim($params[0], '/');
-            }
-            else{
+            }else{
                 return '';
             }
         }

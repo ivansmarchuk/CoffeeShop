@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/coffeeshop/">
     <?= $this->getMeta(); ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -125,7 +126,59 @@
         </div>
     </div>
     <!--MAIN BODY-->
-    <?= $content; ?>
+    <div class="container">
+        <div class="row relative">
+            <div data-sidebar="true" data-force-toggle="true" data-locked="true"
+                 data-hammer-scrollbar="true" class="sidebar-trigger sidebar-force-open sidebar-locked">
+                <a class="sidebar-toggle" href="#">
+                    <span class="sr-only">Sidebar toggle</span>
+                    <i class="fa fa-sidebar-toggle"></i>
+                </a>
+
+                <div class="sidebar-wrapper sidebar-default sidebar-open-init">
+                    <div class="sidebr-item">
+                        <h4 class="sidebar-title">Kategorien</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">Neuheiten</a></li>
+                            <li><a href="#">Meistverkauft</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <div class="sidebr-item">
+                        <h4 class="sidebar-title">Land</h4>
+                        <ul class="sidebar-list-check">
+                            <li>
+                                <input id="med" type="checkbox" />
+                                <label for="med">Medin</label>
+                            </li>
+                            <li>
+                                <input id="med" type="checkbox" />
+                                <label for="med">Medin</label>
+                            </li>
+                            <li>
+                                <input id="med" type="checkbox" />
+                                <label for="med">Medin</label>
+                            </li>
+                            <li>
+                                <input id="med" type="checkbox" />
+                                <label for="med">Medin</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebr-item">
+                        <h4 class="sidebar-title">Preis</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+            <?= $content; ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

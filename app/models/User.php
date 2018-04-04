@@ -19,4 +19,5 @@ class User extends AppModel
      'address' => '',
      'role' => 'user',
     ];
+
 }

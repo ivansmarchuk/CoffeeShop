@@ -1,42 +1,39 @@
-<div class="container">
-    <div class="login">
-        <form>
-            <div class="col-md-6 login-do">
-                <div class="login-mail">
-                    <input type="text" placeholder="Name" required="">
-                    <i  class="glyphicon glyphicon-user"></i>
-                </div>
-                <div class="login-mail">
-                    <input type="text" placeholder="Phone Number" required="">
-                    <i  class="glyphicon glyphicon-phone"></i>
-                </div>
-                <div class="login-mail">
-                    <input type="text" placeholder="Email" required="">
-                    <i  class="glyphicon glyphicon-envelope"></i>
-                </div>
-                <div class="login-mail">
-                    <input type="password" placeholder="Password" required="">
-                    <i class="glyphicon glyphicon-lock"></i>
-                </div>
-                <a class="news-letter " href="#">
-                    <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-                </a>
-                <label class="hvr-skew-backward">
-                    <input type="submit" value="Submit">
-                </label>
 
-            </div>
-            <div class="col-md-6 login-right">
-                <h3>Completely Free Account</h3>
-
-                <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio
-                    libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
-                <a href="login.html" class="hvr-skew-backward">Login</a>
-
-            </div>
-
-            <div class="clearfix"> </div>
-        </form>
+    <div class="register-top heading">
+        <h2>Jetzt kostenlos registrieren</h2>
     </div>
 
-</div>
+    <div class="register-main">
+        <div class="col-md-6 account-left">
+            <form method="post" action="user/signup" id="signup" role="form" data-toggle="validator">
+                <div class="form-group has-feedback">
+                    <label for="login">Login</label>
+                    <input type="text" name="login" class="form-control" id="login" placeholder="Login" value="<?=isset($_SESSION['form_data']['login']) ? h($_SESSION['form_data']['login']) : '';?>" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="pasword">Passwort</label>
+                    <input type="password" name="password" class="form-control" id="pasword" placeholder="Passwort" data-error="Пароль должен включать не менее 6 символов" data-minlength="6" value="<?=isset($_SESSION['form_data']['password']) ? h($_SESSION['form_data']['password']) : '';?>" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="<?=isset($_SESSION['form_data']['name']) ? h($_SESSION['form_data']['name']) : '';?>" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="email">E-Mail</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="E-Mail" value="<?=isset($_SESSION['form_data']['email']) ? h($_SESSION['form_data']['email']) : '';?>" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="address">Adresse</label>
+                    <input type="text" name="address" class="form-control" id="address" placeholder="Adresse" value="<?=isset($_SESSION['form_data']['address']) ? h($_SESSION['form_data']['address']) : '';?>" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <button type="submit" class="btn btn-default">Registrieren</button>
+            </form>
+            <?php if(isset($_SESSION['form_data'])) unset($_SESSION['form_data']); ?>
+        </div>
+    </div>

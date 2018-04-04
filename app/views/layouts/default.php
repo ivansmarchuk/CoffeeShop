@@ -7,8 +7,7 @@
 <body>
 <h1>Default Template</h1>
 
-<?= $contect; ?>
-<?= $name ?>
+
 
 <<?php
 use \RedBeanPHP\R as R;
@@ -17,7 +16,7 @@ $logs = R::getDatabaseAdapter()
     ->getDatabase()
     ->getLogger();
 
-debug( $logs->grep( 'SELECT' ) );
+debug( $logs );
 ?>
 </body>
 </html>

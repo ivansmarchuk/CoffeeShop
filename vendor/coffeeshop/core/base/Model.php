@@ -22,6 +22,10 @@ abstract class Model {
     {
         Db::instance();
     }
+
+    /** load data from register form
+     * @param $data  all data from register form
+     */
     public function load($data){
         foreach ($this->attributes as $name => $value){
             if(isset($data[$name])){

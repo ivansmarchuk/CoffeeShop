@@ -13,9 +13,14 @@ use app\models\User;
 
 class UserController extends AppController
 {
+    /**
+     * action for form validation
+     */
     public function signupAction(){
         if(!empty($_POST)){
             $user = new User();
+            $data = $_POST;
+            $user->load($data);
             debug($user);
             die;
         }

@@ -47,7 +47,7 @@ class View
             throw new \Exception("{$viewFile} was not found", 500);
         }
         if(false !== $this->layout){
-            $layoutFile = APP ."/views/layouts/{$this->layout}.php";
+            $layoutFile = APP . "/views/layouts/{$this->layout}.php";
           if(is_file($layoutFile)){
               require_once $layoutFile;
           }else{
