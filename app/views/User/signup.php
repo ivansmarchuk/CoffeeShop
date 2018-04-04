@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group has-feedback">
                     <label for="pasword">Passwort</label>
-                    <input type="password" name="password" class="form-control" id="pasword" placeholder="Passwort" data-error="Пароль должен включать не менее 6 символов" data-minlength="6" value="<?=isset($_SESSION['form_data']['password']) ? h($_SESSION['form_data']['password']) : '';?>" required>
+                    <input type="password" name="password" class="form-control" id="pasword" placeholder="Passwort"  data-minlength="6" value="<?=isset($_SESSION['form_data']['password']) ? h($_SESSION['form_data']['password']) : '';?>" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                     <div class="help-block with-errors"></div>
                 </div>

@@ -10,6 +10,7 @@ namespace coffeeshop\base;
 
 
 use coffeeshop\Db;
+use RedBeanPHP\R;
 use Valitron\Validator;
 
 
@@ -33,6 +34,19 @@ abstract class Model {
                 $this->attributes[$name] = $data[$name];
             }
         }
+    }
+
+    /**
+     * save data in db table
+     * @param $table table in database
+     * @return int|string save Readbean in error (id od message)
+     */
+    public function save($table){
+        $tbl = R::dispense($table);
+        foreach ($this->attributes as $name => $value){
+            $tbl->$name = $value;
+        }
+        return R::store($tbl);
     }
 
     /**
