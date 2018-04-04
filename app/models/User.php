@@ -9,6 +9,8 @@
 namespace app\models;
 
 
+use RedBeanPHP\R;
+
 class User extends AppModel
 {
     public $attributes = [
@@ -39,5 +41,23 @@ class User extends AppModel
         ]
 
     ];
+
+    /**
+     * search in DB the user if user has been registered
+     */
+    public function checkUnique(){
+        $user = R::findOne('user', 'login = ? OR email = ?',
+            [$this->attributes['login'], $this->attributes['email']]);
+        if($user){
+            if($user->login == $this->attributes['login']){
+                $this->errors['unique'][] = 'Das angegebene Konto ist bereits vorhanden';
+            }
+            if($user->email == $this->attributes['email']){
+                $this->errors['unique'][] = 'Das angegebene E-Mail ist bereits vorhanden';
+            }
+            return false;
+        }
+        return true;
+    }
 
 }
