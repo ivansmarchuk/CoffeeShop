@@ -25,6 +25,7 @@ class UserController extends AppController
             if (!$user->validate($data)) {
                 $user->getErrors();
             } else {
+                $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($user->save('user')) {
                     $_SESSION['success'] = 'Sie wurden erfolgreich registriert...';
                 } else {
