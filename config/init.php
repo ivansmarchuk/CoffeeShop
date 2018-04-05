@@ -6,7 +6,7 @@ define("WWW", ROOT . '/public');
 define("APP", ROOT . '/app');
 define("CACHE", ROOT . '/tmp/cache');
 define("CONF", ROOT . '/config');
-define("LAYOUT", 'coffee');
+define("LAYOUT", 'coffee1');
 
 //http://localhost/CoffeeShop/public/index.php
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";

@@ -20,6 +20,7 @@
     <link href="css/style.css" rel="stylesheet">
 
 </head>
+<body>
 <div id="wrapper">
     <header id="header">
         <!--TOP MENU-->
