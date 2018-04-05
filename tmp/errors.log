@@ -1038,3 +1038,5 @@
 ===================
 [2018-04-05 00:32:21] Fehlertext:  Rule 'lenghtMin' has not been registered with Valitron\Validator::addRule(). | File: C:\xampp\htdocs\CoffeeShop\vendor\vlucas\valitron\src\Valitron\Validator.php | Line: 1134 
 ===================
+[2018-04-05 02:37:07] Fehlertext:  C:\xampp\htdocs\CoffeeShop/app/views/User/logout.php was not found | File: C:\xampp\htdocs\CoffeeShop\vendor\coffeeshop\core\base\View.php | Line: 47 
+===================

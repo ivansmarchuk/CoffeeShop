@@ -39,8 +39,18 @@ class UserController extends AppController
 
     }
 
-    public function loginAction()
-    {
+    public function loginAction(){
+        if(!empty($_POST)){
+            $user = new User();
+            if($user->login()){
+                $_SESSION['success'] = 'Sie haben sich erfolgreich angemeldet';
+            }else{
+                $_SESSION['error'] ='Benutzername oder Passwort ist ungültig';
+            }
+            redirect();
+
+        }
+        $this->setMeta('Einloggen');
 
     }
 

@@ -60,4 +60,31 @@ class User extends AppModel
         return true;
     }
 
+
+    /**
+     * authorizes users on the site. All information except the password is taken from the database.
+     * @param bool $isAdmin for adminPanel(future task)
+     * @return bool is authorized
+     */
+    public function login($isAdmin = false){
+        $login  = !empty(trim($_POST['login'])) ? trim($_POST['login']) : null;
+        $password  = !empty(trim($_POST['login'])) ? trim($_POST['password']) : null;
+        if($login && $password){
+            if($isAdmin){
+                $user = R::findOne('user', "login = ? AND role = 'admin'", [$login]);
+
+            }else{
+                $user = R::findOne('user', "login = ? ", [$login]);
+            }
+            if ($user){
+                if(password_verify($password, $user->password)){
+                    foreach ($user as $k => $v){
+                        if($k != 'password')  $_SESSION['user'][$k] = $v;
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
