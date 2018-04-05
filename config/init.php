@@ -4,8 +4,6 @@ define("DEBUG", 1);
 define("ROOT", dirname(__DIR__));
 define("WWW", ROOT . '/public');
 define("APP", ROOT . '/app');
-define("CORE", ROOT . '/vendor/coffeeshop/core');
-define("LIBS", ROOT . '/vendor/coffeeshop/core/libs');
 define("CACHE", ROOT . '/tmp/cache');
 define("CONF", ROOT . '/config');
 define("LAYOUT", 'coffee');

@@ -22,6 +22,6 @@ class MainController extends AppController
         //$brands = R::find('brand', 'LIMIT 3');
 
         $this->setMeta(App::$app->getProperty('shop_name'), 'Beschreibung', 'Keys');
-        $this->set(compact('user'));
+        //$this->set(compact('brands'));
     }
 }
