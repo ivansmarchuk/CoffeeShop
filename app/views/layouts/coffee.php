@@ -25,41 +25,57 @@
         <!--TOP MENU-->
         <div class="container">
             <div class="row">
-                <div class="h-panel clearfix">
-                    <nav class="h-nav h-nav-tabs">
-                        <a href='#' class="active">Coffee Shop</a>
-                        <a href='#'>Über Uns</a>
-                    </nav>
-                    <nav class="h-nav h-nav-center">
-                        <a href='#'>Aktionen</a>
-                        <a href='#'>Versand</a>
-                        <a href='#'>Kontakt</a>
-                    </nav>
-                    <nav class="h-nav pull-right">
-                        <div class="btn-group">
-                            <a class="dropdown-toggle" data-toggle="dropdown"><span
-                                        class="glyphicon glyphicon-user"></span>Mein Konto
-                            </a>
-                            <ul class="dropdown-menu h-nav-menu">
-                                <?php if (!empty($_SESSION['user'])): ?>
-                                    <li><a href="#">Herzlich willkommen, <?= h($_SESSION['user']['name']); ?></a></li>
-                                    <li><a href='#'><span class="glyphicon glyphicon-time"></span>Bestellungen</a></li>
-                                    <li><a href="user/logout">Ausloggen</a></li>
-                                <?php else: ?>
-                                    <li><a href="user/login">Einloggen</a></li>
-                                    <li><a href="user/signup">Registrieren</a></li>
-                                <?php endif; ?>
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Coffee Shop</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Über Uns</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#" class="btn pull-right"><span
+                                                class="glyphicon glyphicon-shopping-cart"></span>Zum
+                                        Warenkorb</a></li>
+                                <!-- <li><a href="../navbar/">Default</a></li>
+                                 <li><a href="../navbar-static-top/">Static top</a></li>-->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">Mein Konto<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <?php if (!empty($_SESSION['user'])): ?>
+                                            <li><a href="#">Herzlich
+                                                    willkommen, <?= h($_SESSION['user']['name']); ?></a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href='#'><span
+                                                            class="glyphicon glyphicon-time"></span>Bestellungen</a>
+                                            </li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="user/logout">Ausloggen</a></li>
+                                        <?php else: ?>
+                                            <li><a href="user/login">Einloggen</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="user/signup">Registrieren</a></li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
-
-                        <!--
-
-                        <a href='#'><span class="glyphicon glyphicon-user"></span>Mein Konto</a>
-                        -->
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             </div>
         </div>
+
         <div class="header-bottom">
             <div class="container">
                 <div class="row">
@@ -117,8 +133,7 @@
                         <li><span class="btn sp">Vietnam</span></li>
                     </ul>
 
-                    <a href="#" class="btn pull-right"><span class="glyphicon glyphicon-shopping-cart"></span>Zum
-                        Warenkorb</a>
+
                 </div>
 
                 <!--<a href="#" class="btn"><span class="glyphicon glyphicon-align-justify"></span>Alle Kategorien</a>-->
