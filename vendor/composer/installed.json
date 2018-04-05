@@ -1,23 +1,23 @@
 [
     {
         "name": "gabordemooij/redbean",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v5.1",
+        "version_normalized": "5.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/gabordemooij/redbean.git",
-            "reference": "0df8f00019a6f24bda1038df00598681173008ec"
+            "reference": "a02e58ad5519149f572559a8293b5dffea385956"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/0df8f00019a6f24bda1038df00598681173008ec",
-            "reference": "0df8f00019a6f24bda1038df00598681173008ec",
+            "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/a02e58ad5519149f572559a8293b5dffea385956",
+            "reference": "a02e58ad5519149f572559a8293b5dffea385956",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.4"
         },
-        "time": "2017-12-28T14:34:34+00:00",
+        "time": "2018-04-01T11:51:37+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

@@ -19,9 +19,9 @@ class MainController extends AppController
 
     public function indexAction()
     {
-        $brands = R::find('brand', 'LIMIT 3');
+        //$brands = R::find('brand', 'LIMIT 3');
 
         $this->setMeta(App::$app->getProperty('shop_name'), 'Beschreibung', 'Keys');
-        $this->set(compact('brands'));
+        $this->set(compact('user'));
     }
 }

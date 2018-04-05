@@ -45,6 +45,12 @@
 .sidebar-wrapper.sidebar-open {
   -webkit-transform: translate3d(0px, 0px, 0px);
   transform: translate3d(0px, 0px, 0px);
+  background-color: #ede9e1;
+  border-top-left-radius: 10px;
+}
+
+.sidebar-wrapper .sidebar-open > .sidebr-item {
+  border-bottom: 1px solid #d0c8c4;
 }
 .sidebar-wrapper .sidebar-menu {
   margin: 0;

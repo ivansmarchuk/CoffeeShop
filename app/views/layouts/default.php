@@ -9,14 +9,15 @@
 
 
 
-<<?php
+<?php
 use \RedBeanPHP\R as R;
-
+ /*
 $logs = R::getDatabaseAdapter()
     ->getDatabase()
     ->getLogger();
 
 debug( $logs );
+ */
 ?>
 </body>
 </html>
