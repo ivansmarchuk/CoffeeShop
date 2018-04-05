@@ -1,9 +1,12 @@
 {
   "autoload": {
     "psr-4": {
-      "coffeeshop\\": "vendor/coffeeshop/core",
+      "coffeeshop\\": "core",
       "app\\": "app"
-    }
+    },
+    "files": [
+      "core/libs/functions.php"
+    ]
   },
   "require": {
     "vlucas/valitron": "^1.4",
