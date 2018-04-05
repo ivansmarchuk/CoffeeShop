@@ -33,7 +33,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Einloggen</button>
                 </form>
-                <?php if(isset($_SESSION['form_data'])) unset($_SESSION['form_data']); ?>
+
             </div>
         </div>
     </div>

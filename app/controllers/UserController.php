@@ -29,6 +29,12 @@ class UserController extends AppController
                 $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($user->save('user')) {
                     $_SESSION['success'] = 'Sie wurden erfolgreich registriert...';
+                    /*
+                    $_SESSION['id'] = $id;
+                    foreach ($user as $k => $v){
+                        if($k != 'password')  $_SESSION['user'][$k] = $v;
+                    }*/
+
                 } else {
                     $_SESSION['error'] = 'Fehler';
                 }
@@ -39,6 +45,9 @@ class UserController extends AppController
 
     }
 
+    /**
+     * login handler
+     */
     public function loginAction(){
         if(!empty($_POST)){
             $user = new User();
@@ -54,8 +63,12 @@ class UserController extends AppController
 
     }
 
-    public function logoutAction()
-    {
+    /**
+     * logout handler
+     */
+    public function logoutAction(){
+        if(isset($_SESSION['user'])) unset($_SESSION['user']);
+        redirect();
 
     }
 

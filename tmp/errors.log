@@ -1040,3 +1040,5 @@
 ===================
 [2018-04-05 02:37:07] Fehlertext:  C:\xampp\htdocs\CoffeeShop/app/views/User/logout.php was not found | File: C:\xampp\htdocs\CoffeeShop\vendor\coffeeshop\core\base\View.php | Line: 47 
 ===================
+[2018-04-05 02:38:45] Fehlertext:  C:\xampp\htdocs\CoffeeShop/app/views/User/logout.php was not found | File: C:\xampp\htdocs\CoffeeShop\vendor\coffeeshop\core\base\View.php | Line: 47 
+===================
