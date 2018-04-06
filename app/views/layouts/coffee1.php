@@ -146,7 +146,7 @@
                         <li>
                             <a href="#">Overview</a>
                         </li>
-
+                        <hr />
                         <!--GET ALL COUNTRIES FROM DB-->
                         <?php if ($countries): ?>
                             <?php foreach ($countries as $country): ?>

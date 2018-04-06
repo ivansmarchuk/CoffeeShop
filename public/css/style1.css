@@ -5,6 +5,17 @@ html {
     font-size: 100%;
 }
 
+hr {
+    max-width: 95%;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d0c8c4;
+    margin: 1em 1em;
+    padding: 0;
+
+}
+
 body {
     font: 16px/20px "Open Sans";
     width: 100%;
@@ -160,7 +171,7 @@ a:hover, a:active, a:focus {
 }
 
 .sidebar-nav li a {
-    border-bottom: 1px solid #d0c8c4;
+
     display: block;
     text-decoration: none;
     color: #000;
@@ -211,7 +222,10 @@ a:hover, a:active, a:focus {
         color: #d0c8c4;
         visibility: hidden;
     }
-    #wrapper.toggled ul.sidebar-nav  {
+
+    
+
+    #wrapper.toggled ul.sidebar-nav {
         visibility: hidden;
     }
 
@@ -269,7 +283,6 @@ a:hover, a:active, a:focus {
 }
 
 .sp {
-
     border-left: 1px solid #d0c8c4;
     border-radius: unset;
 }
@@ -353,7 +366,8 @@ a:hover, a:active, a:focus {
     color: #333333;
     font-family: "Patua One";
 }
-.price-old{
+
+.price-old {
     color: red;
 }
 
@@ -386,30 +400,3 @@ a:hover, a:active, a:focus {
     border: 1px solid black;
 
 }
-
-/*SIDEBAR
-.sidebr-item{
-    padding: 20px;
-}
-
-
-.sidebar-title {
-    margin: 0 0 15px 0;
-    font-weight: 900;
-    color: #293237;
-    text-transform: uppercase;
-}
-
-.sidebar-list,
-.sidebar-list-check {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.sidebar-list li {margin-bottom: 10px;}
-.sidebar-list li:last-child {margin-bottom: 0;}
-
-.sidebar-list a.active {
-    color: #934A0E;
-}
-*/
