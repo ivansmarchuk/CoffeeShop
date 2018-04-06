@@ -116,7 +116,6 @@ a:hover, a:active, a:focus {
     width: 0;
     height: 100%;
     margin-left: -250px;
-    overflow-y: auto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -168,7 +167,7 @@ a:hover, a:active, a:focus {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #d0c8c4;
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -188,7 +187,7 @@ a:hover, a:active, a:focus {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: #d0c8c4;
     background: none;
 }
 
@@ -218,10 +217,6 @@ a:hover, a:active, a:focus {
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
-    }
-
-    .btn-dsp {
-        display: none;
     }
 }
 

@@ -14,14 +14,17 @@ use coffeeshop\base\Controller;
 use coffeeshop\Cache;
 use \RedBeanPHP\R as R;
 
+
 class MainController extends AppController
 {
 
     public function indexAction()
     {
         //$brands = R::find('brand', 'LIMIT 3');
-
+        $countries = R::findAll( 'country');
+        //debug($countries);
         $this->setMeta(App::$app->getProperty('shop_name'), 'Beschreibung', 'Keys');
+        $this->set(compact('countries'));
         //$this->set(compact('brands'));
     }
 }

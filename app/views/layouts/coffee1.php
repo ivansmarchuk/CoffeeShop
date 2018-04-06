@@ -134,7 +134,7 @@
                     <ul class="sidebar-nav">
                         <li class="sidebar-brand">
                             <a href="#">
-                                Start Bootstrap
+                                Home
                             </a>
                         </li>
                         <li>
@@ -146,18 +146,14 @@
                         <li>
                             <a href="#">Overview</a>
                         </li>
-                        <li>
-                            <a href="#">Events</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
+
+                        <!--GET ALL COUNTRIES FROM DB-->
+                        <?php if($countries): ?>
+                        <?php foreach ($countries as $country): ?>
+                        <li><a href="#"><?= $country->title; ?></a></li>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+
                     </ul>
                 </div>
                 <!-- /#sidebar-wrapper -->
