@@ -20,11 +20,14 @@ class MainController extends AppController
 
     public function indexAction()
     {
-        //$brands = R::find('brand', 'LIMIT 3');
+
         $countries = R::findAll( 'country');
-        //debug($countries);
+        $hits = R::find('product', "hit = '1' AND status = '1'");
+
         $this->setMeta(App::$app->getProperty('shop_name'), 'Beschreibung', 'Keys');
-        $this->set(compact('countries'));
-        //$this->set(compact('brands'));
+        //set new variable for visible in views
+        $this->set(compact('countries', 'hits'));
+
+
     }
 }

@@ -148,12 +148,11 @@
                         </li>
 
                         <!--GET ALL COUNTRIES FROM DB-->
-                        <?php if($countries): ?>
-                        <?php foreach ($countries as $country): ?>
-                        <li><a href="#"><?= $country->title; ?></a></li>
-                        <?php endforeach; ?>
+                        <?php if ($countries): ?>
+                            <?php foreach ($countries as $country): ?>
+                                <li><a href="#"><?= $country->title; ?></a></li>
+                            <?php endforeach; ?>
                         <?php endif; ?>
-
                     </ul>
                 </div>
                 <!-- /#sidebar-wrapper -->

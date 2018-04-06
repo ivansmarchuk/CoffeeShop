@@ -160,6 +160,7 @@ a:hover, a:active, a:focus {
 }
 
 .sidebar-nav li a {
+    border-bottom: 1px solid #d0c8c4;
     display: block;
     text-decoration: none;
     color: #000;
@@ -207,6 +208,11 @@ a:hover, a:active, a:focus {
 
     #wrapper.toggled #sidebar-wrapper {
         width: 0;
+        color: #d0c8c4;
+        visibility: hidden;
+    }
+    #wrapper.toggled ul.sidebar-nav  {
+        visibility: hidden;
     }
 
     #page-content-wrapper {
@@ -336,9 +342,9 @@ a:hover, a:active, a:focus {
 .cat {
     display: block;
     text-align: justify;
-    line-height: 12px;
+    line-height: 14px;
     color: #333333;
-    font-size: 12px;
+    font-size: 13px;
 
 }
 
@@ -346,6 +352,9 @@ a:hover, a:active, a:focus {
     font-size: 20px;
     color: #333333;
     font-family: "Patua One";
+}
+.price-old{
+    color: red;
 }
 
 .review {
