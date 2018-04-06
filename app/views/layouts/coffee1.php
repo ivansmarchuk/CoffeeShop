@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<div id="wrapper">
+<div class="wrapper">
     <header id="header">
         <!--TOP MENU-->
         <div class="container">
@@ -35,6 +35,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="#">Coffee Shop</a>
+
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
@@ -44,7 +45,7 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#" class="btn pull-right"><span
-                                            class="glyphicon glyphicon-shopping-cart"></span>Zum
+                                                class="glyphicon glyphicon-shopping-cart"></span>Zum
                                         Warenkorb</a></li>
                                 <!-- <li><a href="../navbar/">Default</a></li>
                                  <li><a href="../navbar-static-top/">Static top</a></li>-->
@@ -57,7 +58,7 @@
                                                     willkommen, <?= h($_SESSION['user']['name']); ?></a></li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href='#'><span
-                                                        class="glyphicon glyphicon-time"></span>Bestellungen</a>
+                                                            class="glyphicon glyphicon-time"></span>Bestellungen</a>
                                             </li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="user/logout">Ausloggen</a></li>
@@ -104,200 +105,91 @@
     </header>
 
     <!-- Sidebar -->
+    <div class="panel">
+        <div class="container">
+            <div class="row">
+                <div class="clearfix">
+                    <a href="#menu-toggle" class="btn btn-lg" id="menu-toggle"><span
+                                class="glyphicon glyphicon-menu-hamburger"></span>Menu</a>
+                    <a href="#" class="btn pull-right"><span class="glyphicon glyphicon-shopping-cart"></span>Zum
+                        Warenkorb</a>
+                </div>
 
+            </div>
+
+
+            <!--<a href="#" class="btn"><span class="glyphicon glyphicon-align-justify"></span>Alle Kategorien</a>-->
+
+
+        </div>
+    </div>
     <!-- Sidebar Holder -->
 
     <div class="container">
-        <div class="row relative">
-            <div class="wrapper">
-                <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
+        <div class="row">
+
+            <div id="wrapper" class="main-wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand">
+                            <a href="#">
+                                Start Bootstrap
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#">Shortcuts</a>
+                        </li>
+                        <li>
+                            <a href="#">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#">Events</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
                 </div>
+                <!-- /#sidebar-wrapper -->
 
-                <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="#">Home 1</a></li>
-                            <li><a href="#">Home 2</a></li>
-                            <li><a href="#">Home 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <?php if (isset($_SESSION['error'])): ?>
+                                    <div class="alert alert-danger">
+                                        <?php echo $_SESSION['error'];
+                                        unset($_SESSION['error']); ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if (isset($_SESSION['success'])): ?>
+                                    <div class="alert alert-success">
+                                        <?php echo $_SESSION['success'];
+                                        unset($_SESSION['success']); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-                <ul class="list-unstyled CTAs">
-                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-                </ul>
-            </nav>
-
-
-            <!-- Page Content Holder -->
-                 <div id="content">
-                     <div class="row">
-                         <div class="col-md-12 tg-side-menu">
-                             <nav class="navbar navbar-default">
-                                 <div class="container-fluid cont-main">
-                                     <div class="navbar-header">
-                                         <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                             <i class="glyphicon glyphicon-align-left"></i>
-                                             <span>Toggle Sidebar</span>
-                                         </button>
-                                     </div>
-
-                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                         <ul class="nav navbar-nav navbar-right">
-                                             <li><a href="#">Page</a></li>
-                                             <li><a href="#">Page</a></li>
-                                             <li><a href="#">Page</a></li>
-                                             <li><a href="#">Page</a></li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </nav>
-                         </div>
-                         <div class="col-md-12">
-                             <?php if (isset($_SESSION['error'])): ?>
-                                 <div class="alert alert-danger">
-                                     <?php echo $_SESSION['error'];
-                                     unset($_SESSION['error']); ?>
-                                 </div>
-                             <?php endif; ?>
-                             <?php if (isset($_SESSION['success'])): ?>
-                                 <div class="alert alert-success">
-                                     <?php echo $_SESSION['success'];
-                                     unset($_SESSION['success']); ?>
-                                 </div>
-                             <?php endif; ?>
-                         </div>
-
-                         <div class="col-md-12 content ">
-                             <div class="row product-wrap">
-                                 <div class="col-md-4 product">
-                                     <div class="product-img">
-                                         <a href="#"><img src="img/img.png" height="218" alt=""></a>
-                                         <span class="glyphicon glyphicon-eye-open review"></span>
-                                     </div>
-                                     <div class="product-footer">
-                                         <h5>Jamaica Blue Mountain</h5>
-                                         <span class="cat">
-                                         Sein exzellentes Aroma, das Noten von gerösteten Nüssen aufweist,
-                                        seine feine Säure und seine natürliche, leichte Süße machen diesen Kaffee
-                                        zu etwas ganz Besonderem und zu einem der teuersten Kaffees der Welt.
-                                    </span>
-                                     </div>
-                                     <div class="bottom-panel">
-                                         <span class="price">15,99 €</span>
-                                         <a href="#" class=""><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-                                     </div>
-                                 </div>
-                                 <div class="col-md-4 product">
-                                     <div class="product-img">
-                                         <a href="#"><img src="img/img2.png" height="218" alt=""></a>
-                                         <span class="glyphicon glyphicon-eye-open review"></span>
-                                     </div>
-                                     <div class="product-footer">
-                                         <h5>Jamaica Blue Mountain</h5>
-                                         <span class="cat">
-                                         Sein exzellentes Aroma, das Noten von gerösteten Nüssen aufweist,
-                                        seine feine Säure und seine natürliche, leichte Süße machen diesen Kaffee
-                                        zu etwas ganz Besonderem und zu einem der teuersten Kaffees der Welt.
-                                    </span>
-                                     </div>
-                                     <div class="bottom-panel">
-                                         <span class="price">15,99 €</span>
-                                         <a href="#" class=""><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-                                     </div>
-                                 </div>
-                                 <div class="col-md-4 product">
-                                     <div class="product-img">
-                                         <a href="#"><img src="img/img3.png" height="218" alt=""></a>
-                                         <span class="glyphicon glyphicon-eye-open review"></span>
-                                     </div>
-                                     <div class="product-footer">
-                                         <h5>Jamaica Blue Mountain</h5>
-                                         <span class="cat">
-                                         Sein exzellentes Aroma, das Noten von gerösteten Nüssen aufweist,
-                                        seine feine Säure und seine natürliche, leichte Süße machen diesen Kaffee
-                                        zu etwas ganz Besonderem und zu einem der teuersten Kaffees der Welt.
-                                    </span>
-                                     </div>
-                                     <div class="bottom-panel">
-                                         <span class="price">15,99 €</span>
-                                         <a href="#" class=""><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-                                     </div>
-                                 </div>
-                                 <div class="col-md-4 product">
-                                     <div class="product-img">
-                                         <a href="#"><img src="img/img4.png" height="218" alt=""></a>
-                                     </div>
-                                     <div class="product-footer">
-                                         <h5>Jamaica Blue Mountain</h5>
-                                         <span class="cat">
-                                         Sein exzellentes Aroma, das Noten von gerösteten Nüssen aufweist,
-                                        seine feine Säure und seine natürliche, leichte Süße machen diesen Kaffee
-                                        zu etwas ganz Besonderem und zu einem der teuersten Kaffees der Welt.
-                                    </span>
-                                     </div>
-                                     <span class="price">15,99 €</span>
-
-                                 </div>
-                                 <div class="col-md-4 product">
-                                     <div class="product-img">
-                                         <a href="#"><img src="img/img.png" height="218" alt=""></a>
-                                     </div>
-                                     <div class="product-footer">
-                                         <h5>Jamaica Blue Mountain</h5>
-                                         <span class="cat">
-                                         Sein exzellentes Aroma, das Noten von gerösteten Nüssen aufweist,
-                                        seine feine Säure und seine natürliche, leichte Süße machen diesen Kaffee
-                                        zu etwas ganz Besonderem und zu einem der teuersten Kaffees der Welt.
-                                    </span>
-                                     </div>
-                                     <span class="price">15,99 €</span>
-                                 </div>
-                                 <div class="col-md-4 product">
-                                     <div class="product-img">
-                                         <a href="#"><img src="img/img.png" height="218" alt=""></a>
-                                     </div>
-                                     <div class="product-footer">
-                                         <h5>Jamaica Blue Mountain</h5>
-                                         <span class="cat">
-                                         Sein exzellentes Aroma, das Noten von gerösteten Nüssen aufweist,
-                                        seine feine Säure und seine natürliche, leichte Süße machen diesen Kaffee
-                                        zu etwas ganz Besonderem und zu einem der teuersten Kaffees der Welt.
-                                    </span>
-                                     </div>
-                                     <span class="price">15,99 €</span>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-
-
-
-                 </div>
+                            <?= $content; ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#page-content-wrapper -->
             </div>
-            </div>
+            <!-- /#wrapper -->
+        </div>
     </div>
-
 
 
 </div>
@@ -307,20 +199,19 @@
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/jquery.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.1.3/hammer.min.js"></script>
 
-<script src="js/sidebar.js"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/validator.js"></script>
-<script>$(document).ready(function () {
-
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-
-    });</script>
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 <script type="text/javascript" src="js/my.js"></script>
 
 </body>
