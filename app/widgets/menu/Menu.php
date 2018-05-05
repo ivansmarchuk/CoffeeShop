@@ -19,6 +19,7 @@ class Menu
     protected $menuHtml;
     protected $tpl;
     protected $container = 'ul';
+    protected $class = 'sidebar-list-check';
     protected $table = 'category';
     protected $cashe = 3600;
     protected $casheKey = 'ishop_menu';
@@ -29,7 +30,6 @@ class Menu
     {
         $this->tpl = __DIR__ . '/menu_tpl/menu.php';
         $this->getOptions($options);
-        debug($this->table);
         $this->run();
 
     }
@@ -41,7 +41,7 @@ class Menu
     protected function getOptions($options)
     {
         foreach ($options as $k => $v) {
-            if(property_exists($this, $k)){
+            if (property_exists($this, $k)) {
                 $this->$k = $v;
             }
         }
@@ -54,20 +54,81 @@ class Menu
     {
         $cache = Cache::instance();
         $this->menuHtml = $cache->get($this->casheKey);
-        if (!$this->menuHtml){
+        if (!$this->menuHtml) {
             $this->data = App::$app->getProperty('cats');
-            if (!$this->data){
-                $this->data =  R::getAssoc("SELECT * FROM {$this->table}");
+            if (!$this->data) {
+                $this->data = $cats = R::getAssoc("SELECT * FROM {$this->table}");
             }
-
+            $this->tree = $this->getTree();
+            $this->menuHtml = $this->getMenuHtml($this->tree);
+            if ($this->cashe){
+                $cache->set($this->casheKey, $this->menuHtml, $this->cashe);
+            }
         }
         $this->output();
     }
 
-    protected  function output(){
-        echo $this->menuHtml;
+    protected function output()
+    {
+        $attrs = '';
+        if (!empty($this->attrs)){
+            foreach ($this->attrs as $k => $v){
+                $attrs .= " $k = '$v' ";
+            }
+        }
+
+        echo "<{$this->container} class = '{$this->class}' $attrs> ";
+        echo $this->prepend;
+            echo $this->menuHtml;
+        echo "</{$this->container}>";
     }
 
-    
+    /**
+     * creates from simple array, that was retrieved from the database a tree for the menu creation
+     * @return new array for menu
+     */
+    protected function getTree()
+    {
+        $tree = [];
+        $data = $this->data;
+        foreach ($data as $id => &$node) {
+            if (!$node['parent_id']) {
+                $tree[$id] = &$node;
+            } else {
+                $data[$node['parent_id']]['childs'][$id] = &$node;
+            }
+        }
+        return $tree;
+    }
+
+    /**
+     * Generates the thml from tree
+     * @param $tree categories tree
+     * @param string $tab divider if menu hasnot the structure like ul->li
+     * @return string new string with menu
+     */
+    protected function getMenuHtml($tree, $tab = '')
+    {
+        $str = '';
+        foreach ($tree as $id => $category) {
+            $str .= $this->catToTemplate($category, $tab, $id);
+        }
+        return $str;
+
+    }
+
+    /**
+     * @param $category category from categories tree
+     * @param $tab divider of elements
+     * @param $id category id
+     * @return string new thml code used templates
+     */
+    protected function catToTemplate($category, $tab, $id)
+    {
+        ob_start();
+        require $this->tpl;
+        return ob_get_clean();
+
+    }
 
 }

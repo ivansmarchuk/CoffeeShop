@@ -131,12 +131,26 @@
             <div id="wrapper" class="main-wrapper">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
-                        <div class="menu">
+                    <div class="sidebr-item">
+                        <h4 class="sidebar-title">Kategorien</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">Neuheiten</a></li>
+                            <li><a href="#">Meistverkauft</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="sidebr-item">
+                        <h4 class="sidebar-title">Land</h4>
                             <?php  new \app\widgets\menu\Menu([
                                     'tpl' =>WWW. '/menu/menu.php',
+                                    'attrs'  => [
+                                        'style' => ' ',
+
+                                    ]
 
                             ])?>
-                        </div>
+                    </div>
                     <!--
                     <ul class="sidebar-nav">
                         <li class="sidebar-brand">

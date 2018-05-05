@@ -223,9 +223,11 @@ a:hover, a:active, a:focus {
         visibility: hidden;
     }
 
+    #wrapper.toggled div.sidebr-item{
+        visibility: hidden;
+    }
 
-
-    #wrapper.toggled ul.sidebar-nav {
+    #wrapper.toggled ul.sidebar-list {
         visibility: hidden;
     }
 
@@ -399,4 +401,31 @@ a:hover, a:active, a:focus {
 .product .bottom-panel .btn {
     border: 1px solid black;
 
+}
+
+/*SIDEBAR*/
+.sidebr-item{
+    padding: 20px;
+}
+
+
+.sidebar-title {
+    margin: 0 0 15px 0;
+    font-weight: 900;
+    color: #293237;
+    text-transform: uppercase;
+}
+
+.sidebar-list,
+.sidebar-list-check {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.sidebar-list li {margin-bottom: 10px;}
+.sidebar-list li:last-child {margin-bottom: 0;}
+
+.sidebar-list a.active {
+    color: #934A0E;
 }

@@ -34,7 +34,7 @@ class AppController extends Controller
         $cache = Cache::instance();
         $cats = $cache->get('cats');
         if(!$cats){
-            $cats = R::getAssoc("SELECT * FROM country");
+            $cats = R::getAssoc("SELECT * FROM coffeeshop.category");
             $cache->set('cats', $cats);
         }
         return $cats;
