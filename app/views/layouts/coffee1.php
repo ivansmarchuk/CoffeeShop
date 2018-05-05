@@ -131,6 +131,13 @@
             <div id="wrapper" class="main-wrapper">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
+                        <div class="menu">
+                            <?php  new \app\widgets\menu\Menu([
+                                    'tpl' =>WWW. '/menu/menu.php',
+
+                            ])?>
+                        </div>
+                    <!--
                     <ul class="sidebar-nav">
                         <li class="sidebar-brand">
                             <a href="#">
@@ -147,13 +154,13 @@
                             <a href="#">Overview</a>
                         </li>
                         <hr />
-                        <!--GET ALL COUNTRIES FROM DB-->
+                        GET ALL COUNTRIES FROM DB
                         <?php if ($countries): ?>
                             <?php foreach ($countries as $country): ?>
                                 <li><a href="#"><?= $country->title; ?></a></li>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                    </ul>
+                    </ul>-->
                 </div>
                 <!-- /#sidebar-wrapper -->
 
