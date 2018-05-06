@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-    <link href="css/font-awesome.min.css" rel="stylesheet" >
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style1.css" rel="stylesheet">
     <link href="css/single_responsive.css" rel="stylesheet">
 
@@ -40,12 +40,12 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="<?= PATH ;?>">Coffee Shop</a>
+                            <a class="navbar-brand" href="<?= PATH; ?>">Coffee Shop</a>
 
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="<?= PATH ;?>">Home</a></li>
+                                <li><a href="<?= PATH; ?>">Home</a></li>
                                 <li><a href="#">Über Uns</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -122,11 +122,7 @@
                 </div>
 
             </div>
-
-
             <!--<a href="#" class="btn"><span class="glyphicon glyphicon-align-justify"></span>Alle Kategorien</a>-->
-
-
         </div>
     </div>
     <!-- Sidebar Holder -->
@@ -148,14 +144,14 @@
                     </div>
                     <div class="sidebr-item">
                         <h4 class="sidebar-title">Land</h4>
-                            <?php  new \app\widgets\menu\Menu([
-                                    'tpl' =>WWW. '/menu/menu.php',
-                                    'attrs'  => [
-                                        'style' => ' ',
+                        <?php new \app\widgets\menu\Menu([
+                            'tpl' => WWW . '/menu/menu.php',
+                            'attrs' => [
+                                'style' => ' ',
 
-                                    ]
+                            ]
 
-                            ])?>
+                        ]) ?>
                     </div>
                 </div>
                 <!-- /#sidebar-wrapper -->
@@ -166,18 +162,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="container">
-                                <?php if (isset($_SESSION['error'])): ?>
-                                    <div class="alert alert-danger">
-                                        <?php echo $_SESSION['error'];
-                                        unset($_SESSION['error']); ?>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if (isset($_SESSION['success'])): ?>
-                                    <div class="alert alert-success">
-                                        <?php echo $_SESSION['success'];
-                                        unset($_SESSION['success']); ?>
-                                    </div>
-                                <?php endif; ?>
+                                    <?php if (isset($_SESSION['error'])): ?>
+                                        <div class="alert alert-danger">
+                                            <?php echo $_SESSION['error'];
+                                            unset($_SESSION['error']); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (isset($_SESSION['success'])): ?>
+                                        <div class="alert alert-success">
+                                            <?php echo $_SESSION['success'];
+                                            unset($_SESSION['success']); ?>
+                                        </div>
+                                    <?php endif; ?>
 
 
                                 </div>
@@ -185,9 +181,7 @@
                                 <?= $content; ?>
 
 
-
                             </div>
-
 
 
                         </div>
@@ -196,11 +190,14 @@
                 <!-- /#page-content-wrapper -->
             </div>
             <!-- /#wrapper -->
+
         </div>
     </div>
 
 
 </div>
+
+
 
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -220,5 +217,12 @@
 </script>
 <script type="text/javascript" src="js/my.js"></script>
 
+<?php
+$logs = \RedBeanPHP\R::getDatabaseAdapter()
+    ->getDatabase()
+    ->getLogger();
+
+debug($logs);
+?>
 </body>
 </html>

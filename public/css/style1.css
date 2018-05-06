@@ -213,6 +213,7 @@ a:hover, a:active, a:focus {
     }
 
     #sidebar-wrapper {
+        height: 100%;
         width: 250px;
         border: 1px solid #d0c8c4;
     }
@@ -360,6 +361,10 @@ a:hover, a:active, a:focus {
     color: #333333;
     font-size: 13px;
 
+}
+.footer-bottom-area {
+    background: #000;
+    color: #fff
 }
 
 .price {

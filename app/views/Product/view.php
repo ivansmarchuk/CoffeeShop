@@ -68,71 +68,35 @@
             </div>
         </div>
     </div>
+    <?php if ($related): ?>
     <div class="col-sm-12">
         <h2 class="related-products-title">Ähnliche Produkte</h2>
+        <?php foreach ($related as $item): ?>
         <div class="col-md-4 product pr-related">
             <div class="product-img">
-                <a href="product/jamaica-blue-mountain"><img src="img/img.png" height="218" alt=""></a>
+                <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="218" alt=""></a>
                 <span class="glyphicon glyphicon-eye-open review"></span>
             </div>
             <div class=".product-related-footer">
-                <a href="product/jamaica-blue-mountain"><h5>Jamaica Blue Mountain</h5></a>
+                <a href="product/<?= $item['alias'] ;?>"><h5><?= $item['title'] ;?></h5></a>
                 <span class="cat">
         </span>
             </div>
             <div class="bottom-panel">
 
-                <span class="price">15.99 € </span>
-                <span class="price price-old"><small><del>16.48 €</del></small></span>
+                <span class="price"><?= $item['price'] ;?> €</span>
 
-                <span class="price price-old"><small>-3%</small></span>
+                <?php if($item['old_price']): ?>
+                    <span class="price price-old"><small><del><?= $item['old_price'] ;?> €</del></small></span>
 
-                <a href="cart/add?id=1" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                    <span class="price price-old"><small>-<?= round((1-($item['price'])/($item['old_price']))*100, 0); ?>%</small></span>
+                <?php endif; ?>
+
+                <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
             </div>
         </div>
-        <div class="col-md-4 product pr-related">
-            <div class="product-img">
-                <a href="product/jamaica-blue-mountain"><img src="img/img.png" height="218" alt=""></a>
-                <span class="glyphicon glyphicon-eye-open review"></span>
-            </div>
-            <div class=".product-related-footer">
-                <a href="product/jamaica-blue-mountain"><h5>Jamaica Blue Mountain</h5></a>
-                <span class="cat">
-            </span>
-            </div>
-            <div class="bottom-panel">
-
-                <span class="price">15.99 € </span>
-                <span class="price price-old"><small><del>16.48 €</del></small></span>
-
-                <span class="price price-old"><small>-3%</small></span>
-
-                <a href="cart/add?id=1" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-            </div>
-        </div>
-        <div class="col-md-4 product pr-related">
-            <div class="product-img">
-                <a href="product/jamaica-blue-mountain"><img src="img/img.png" height="218" alt=""></a>
-                <span class="glyphicon glyphicon-eye-open review"></span>
-            </div>
-            <div class=".product-related-footer">
-                <a href="product/jamaica-blue-mountain"><h5>Jamaica Blue Mountain</h5></a>
-                <span class="cat">
-           </span>
-            </div>
-            <div class="bottom-panel">
-
-                <span class="price">15.99 € </span>
-                <span class="price price-old"><small><del>16.48 €</del></small></span>
-
-                <span class="price price-old"><small>-3%</small></span>
-
-                <a href="cart/add?id=1" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-            </div>
-        </div>
-
-
+        <?php endforeach;; ?>
     </div>
-
+    <?php endif; ?>
 
 </div>
