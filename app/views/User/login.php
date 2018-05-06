@@ -11,6 +11,7 @@
 </div>-->
 <!--end-breadcrumbs-->
 <!--starts-->
+<?php if (!isset($_SESSION['success'])): ?>
 <div class="col-md-12">
     <div class="product-one login">
         <div class="register-top heading">
@@ -38,4 +39,5 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
 <!--pro

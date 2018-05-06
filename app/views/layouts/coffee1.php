@@ -15,11 +15,8 @@
     <link rel="stylesheet" id="google_font_3-css" href="https://fonts.googleapis.com/css?family=Patua+One&amp;ver=1.0"
           type="text/css" media="all">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style1.css" rel="stylesheet">
-    <link href="css/single_responsive.css" rel="stylesheet">
 
 
 </head>
@@ -162,12 +159,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="container">
+
                                     <?php if (isset($_SESSION['error'])): ?>
                                         <div class="alert alert-danger">
                                             <?php echo $_SESSION['error'];
                                             unset($_SESSION['error']); ?>
                                         </div>
                                     <?php endif; ?>
+
                                     <?php if (isset($_SESSION['success'])): ?>
                                         <div class="alert alert-success">
                                             <?php echo $_SESSION['success'];
@@ -190,11 +189,8 @@
                 <!-- /#page-content-wrapper -->
             </div>
             <!-- /#wrapper -->
-
         </div>
     </div>
-
-
 </div>
 
 
@@ -214,6 +210,7 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
 </script>
 <script type="text/javascript" src="js/my.js"></script>
 

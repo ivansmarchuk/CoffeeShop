@@ -10,7 +10,7 @@
     <div class="col-sm-5">
         <div class="product-images">
             <div class="product-main-img" >
-                <img src="img/<?= $product->img;?>" alt="" pagespeed_url_hash="798848650" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                <img src="img/<?= $product->img;?>" alt="">
             </div>
         </div>
     </div>
@@ -20,17 +20,15 @@
             <div class="product-inner-price price">
                 <ins><?= $product->price ;?> €</ins>
                 <?php if($product->old_price): ?>
-                    <del><?= $product->old_price ;?> €</del>
+                    <del><?= $product->old_price ;?> € </del>
+                    <ins style="color:red">&nbsp;&nbsp;&nbsp;-<?= round((1-($product->price)/($product->old_price))*100, 0); ?>%</ins>
                 <?php endif; ?>
-
-
-
             </div>
             <form action="" class="cart">
                 <div class="quantity">
                     <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                 </div>
-                <button class="add_to_cart_button btn btn-default btn-sm" type="submit"><a id="productAdd" data-id="<?= $product->id;?>" href="cart/add?<?= $product->id;?>" class="none_style">Zum Warenkorb hinzufügen</a></button>
+                <button class="add_to_cart_button btn btn-default btn-sm" type="submit"><a id="productAdd" data-id="<?= $product->id;?>" href="cart/add?<?= $product->id;?>" class="none_style">Kaufen</a></button>
             </form>
             <div class="product-inner-category">
                 <p>LAND: <a href="category/<?= $cats[$product->category_id]['alias'] ;?>"><?= $country->title ;?></a>. Lieferzeit: ca. 1-3 Werktage. </p>
@@ -73,8 +71,8 @@
         <h2 class="related-products-title">Ähnliche Produkte</h2>
         <?php foreach ($related as $item): ?>
         <div class="col-md-4 product pr-related">
-            <div class="product-img">
-                <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="218" alt=""></a>
+            <div class="product-img product-img-small">
+                <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="168" alt=""></a>
                 <span class="glyphicon glyphicon-eye-open review"></span>
             </div>
             <div class=".product-related-footer">
@@ -83,20 +81,46 @@
         </span>
             </div>
             <div class="bottom-panel">
-
-                <span class="price"><?= $item['price'] ;?> €</span>
-
+                <span class="price price-small"><?= $item['price'] ;?> €</span>
                 <?php if($item['old_price']): ?>
-                    <span class="price price-old"><small><del><?= $item['old_price'] ;?> €</del></small></span>
-
-                    <span class="price price-old"><small>-<?= round((1-($item['price'])/($item['old_price']))*100, 0); ?>%</small></span>
+                    <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
                 <?php endif; ?>
 
-                <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
             </div>
         </div>
         <?php endforeach;; ?>
     </div>
     <?php endif; ?>
+
+
+
+
+    <?php if ($recentlyViewed): ?>
+        <div class="col-sm-12">
+            <h2 class="related-products-title">Ihre zuletzt angesehenen Artikel</h2>
+            <?php foreach ($recentlyViewed as $item): ?>
+                <div class="col-md-3 product pr-related">
+                    <div class="product-img product-img-small">
+                        <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="168" alt=""></a>
+                        <span class="glyphicon glyphicon-eye-open review"></span>
+                    </div>
+                    <div class=".product-related-footer">
+                        <a href="product/<?= $item['alias'] ;?>"><h5><?= $item['title'] ;?></h5></a>
+                        <span class="cat"> </span>
+                    </div>
+                    <div class="bottom-panel">
+                        <span class="price price-small"><?= $item['price'] ;?> €</span>
+                        <?php if($item['old_price']): ?>
+                            <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
+                        <?php endif; ?>
+
+                        <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                    </div>
+                </div>
+            <?php endforeach;; ?>
+        </div>
+    <?php endif; ?>
+
 
 </div>

@@ -8,6 +8,7 @@
 namespace app\controllers;
 
 
+use app\models\Product;
 use RedBeanPHP\R;
 
 class ProductController extends AppController
@@ -22,9 +23,25 @@ class ProductController extends AppController
         if (!$product) {
             throw new \Exception('Seite wurde nicht gefunden', 404);
         }
+
+        //selects from database related products for the product overview page
         $related = R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ?", [$product->id]);
+
+        //the entry in the cookies of the recently product
+        $p_model = new Product();
+        $p_model->setRecentlyViewed($product->id);
+
+        //viewed products
+        $r_viewed = $p_model->getRecentlyViewed();
+        $recentlyViewed = null;
+        if ($r_viewed){
+            $recentlyViewed = R::find('product', 'id IN (' . R::genSlots($r_viewed) . ') LIMIT 4', $r_viewed);
+        }
+
+
+
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product', 'country', 'related'));
+        $this->set(compact('product', 'country', 'related', 'recentlyViewed'));
 
     }
 

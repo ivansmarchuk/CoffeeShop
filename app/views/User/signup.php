@@ -1,4 +1,4 @@
-
+<?php if (!isset($_SESSION['success'])): ?>
     <div class="register-top heading">
         <h2>Jetzt kostenlos registrieren</h2>
     </div>
@@ -37,3 +37,4 @@
             <?php if(isset($_SESSION['form_data'])) unset($_SESSION['form_data']); ?>
         </div>
     </div>
+<?php endif; ?>

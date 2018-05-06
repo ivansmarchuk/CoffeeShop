@@ -21,3 +21,4 @@ function redirect($http = false){
 function h($str){
     return htmlspecialchars($str, ENT_QUOTES);
 }
+

@@ -204,6 +204,7 @@ a:hover, a:active, a:focus {
 }
 
 @media (min-width: 768px) {
+
     #wrapper {
         padding-left: 250px;
     }
@@ -331,7 +332,10 @@ a:hover, a:active, a:focus {
     margin-bottom: 15px;
 
 }
-
+.product-img-small {
+    height: 185px;
+    margin-bottom: 10px;
+}
 .product-img:hover .review {
     display: block;
 
@@ -368,13 +372,17 @@ a:hover, a:active, a:focus {
 }
 
 .price {
-    font-size: 20px;
+    font-size: 16px;
     color: #333333;
     font-family: "Patua One";
 }
 
 .price-old {
     color: red;
+}
+
+.price-small {
+    font-size: 14px;
 }
 
 .review {
@@ -612,7 +620,7 @@ form.cart {
     text-transform: uppercase
 }
 .pr-related{
-    height: 350px;
+    height: 300px;
     border: none;
     margin: 0;
 }

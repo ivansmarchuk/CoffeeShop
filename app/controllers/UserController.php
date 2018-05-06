@@ -35,7 +35,6 @@ class UserController extends AppController
                     foreach ($user as $k => $v){
                         if($k != 'password')  $_SESSION['user'][$k] = $v;
                     }*/
-
                 } else {
                     $_SESSION['error'] = 'Fehler';
                 }
@@ -54,6 +53,7 @@ class UserController extends AppController
             $user = new User();
             if($user->login()){
                 $_SESSION['success'] = 'Sie haben sich erfolgreich angemeldet';
+
             }else{
                 $_SESSION['error'] ='Benutzername oder Passwort ist ungültig';
             }
