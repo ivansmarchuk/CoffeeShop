@@ -1,0 +1,127 @@
+<?= debug($product) ;?>
+<div class="row product-wrap">
+    <div class="product-breadcroumb">
+        <a href="">Home</a>
+        <a href="">Category Name</a>
+        <a href="">Sony Smart TV - 2015</a>
+    </div>
+    <div class="col-sm-6">
+        <div class="product-images">
+            <div class="product-main-img">
+                <img src="img/img.png" alt="" pagespeed_url_hash="798848650" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="product-inner">
+            <h2 class="product-name">Sony Smart TV - 2015</h2>
+            <div class="product-inner-price price">
+                <ins>700.00 €</ins> <del>100.00 €</del>
+            </div>
+            <form action="" class="cart">
+                <div class="quantity">
+                    <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                </div>
+                <button class="add_to_cart_button btn btn-default btn-sm" type="submit">Add to cart</button>
+            </form>
+            <div class="product-inner-category">
+                <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
+            </div>
+            <div role="tabpanel">
+                <ul class="product-tab" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                    <li role="presentation" class=""><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="home">
+                        <h2>Product Description</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
+                        <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                        <h2>Reviews</h2>
+                        <div class="submit-review">
+                            <p><label for="name">Name</label> <input name="name" type="text"></p>
+                            <p><label for="email">Email</label> <input name="email" type="email"></p>
+                            <div class="rating-chooser">
+                                <p>Your rating</p>
+                                <div class="rating-wrap-post">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                            <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                            <p><input type="submit" value="Submit"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2 class="related-products-title">Ähnliche Produkte</h2>
+    <div class="col-md-4 product pr-related">
+        <div class="product-img">
+            <a href="product/jamaica-blue-mountain"><img src="img/img.png" height="218" alt=""></a>
+            <span class="glyphicon glyphicon-eye-open review"></span>
+        </div>
+        <div class=".product-related-footer">
+            <a href="product/jamaica-blue-mountain"><h5>Jamaica Blue Mountain</h5></a>
+            <span class="cat">
+        </span>
+        </div>
+        <div class="bottom-panel">
+
+            <span class="price">15.99 € </span>
+            <span class="price price-old"><small><del>16.48 €</del></small></span>
+
+            <span class="price price-old"><small>-3%</small></span>
+
+            <a href="cart/add?id=1" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+        </div>
+    </div>
+    <div class="col-md-4 product pr-related">
+        <div class="product-img">
+            <a href="product/jamaica-blue-mountain"><img src="img/img.png" height="218" alt=""></a>
+            <span class="glyphicon glyphicon-eye-open review"></span>
+        </div>
+        <div class=".product-related-footer">
+            <a href="product/jamaica-blue-mountain"><h5>Jamaica Blue Mountain</h5></a>
+            <span class="cat">
+            </span>
+        </div>
+        <div class="bottom-panel">
+
+            <span class="price">15.99 € </span>
+            <span class="price price-old"><small><del>16.48 €</del></small></span>
+
+            <span class="price price-old"><small>-3%</small></span>
+
+            <a href="cart/add?id=1" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+        </div>
+    </div>
+    <div class="col-md-4 product pr-related">
+        <div class="product-img">
+            <a href="product/jamaica-blue-mountain"><img src="img/img.png" height="218" alt=""></a>
+            <span class="glyphicon glyphicon-eye-open review"></span>
+        </div>
+        <div class=".product-related-footer">
+            <a href="product/jamaica-blue-mountain"><h5>Jamaica Blue Mountain</h5></a>
+            <span class="cat">
+           </span>
+        </div>
+        <div class="bottom-panel">
+
+            <span class="price">15.99 € </span>
+            <span class="price price-old"><small><del>16.48 €</del></small></span>
+
+            <span class="price price-old"><small>-3%</small></span>
+
+            <a href="cart/add?id=1" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+        </div>
+    </div>
+</div>

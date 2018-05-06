@@ -15,7 +15,13 @@
     <link rel="stylesheet" id="google_font_3-css" href="https://fonts.googleapis.com/css?family=Patua+One&amp;ver=1.0"
           type="text/css" media="all">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" >
     <link href="css/style1.css" rel="stylesheet">
+    <link href="css/single_responsive.css" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -34,12 +40,12 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Coffee Shop</a>
+                            <a class="navbar-brand" href="<?= PATH ;?>">Coffee Shop</a>
 
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="<?= PATH ;?>">Home</a></li>
                                 <li><a href="#">Über Uns</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -151,30 +157,6 @@
 
                             ])?>
                     </div>
-                    <!--
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-brand">
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#">Shortcuts</a>
-                        </li>
-                        <li>
-                            <a href="#">Overview</a>
-                        </li>
-                        <hr />
-                        GET ALL COUNTRIES FROM DB
-                        <?php if ($countries): ?>
-                            <?php foreach ($countries as $country): ?>
-                                <li><a href="#"><?= $country->title; ?></a></li>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </ul>-->
                 </div>
                 <!-- /#sidebar-wrapper -->
 
@@ -183,6 +165,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="container">
                                 <?php if (isset($_SESSION['error'])): ?>
                                     <div class="alert alert-danger">
                                         <?php echo $_SESSION['error'];
@@ -195,9 +178,18 @@
                                         unset($_SESSION['success']); ?>
                                     </div>
                                 <?php endif; ?>
+
+
+                                </div>
+
+                                <?= $content; ?>
+
+
+
                             </div>
 
-                            <?= $content; ?>
+
+
                         </div>
                     </div>
                 </div>
@@ -216,8 +208,6 @@
 <!--[if lt IE 9]>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.1.3/hammer.min.js"></script>
-
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
