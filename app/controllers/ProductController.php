@@ -12,14 +12,21 @@ use RedBeanPHP\R;
 
 class ProductController extends AppController
 {
-    public function viewAction(){
+    public function viewAction()
+    {
         $alias = $this->route['alias'];
         $product = R::findOne('product', "alias = ? AND status = '1'", [$alias]);
-        if(!$product){
+
+        $country = R::findOne('country', "id = ?", [$product->country_id]);
+
+        if (!$product) {
             throw new \Exception('Seite wurde nicht gefunden', 404);
         }
 
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product'));
+        $this->set(compact('product', 'country'));
+
     }
+
+
 }

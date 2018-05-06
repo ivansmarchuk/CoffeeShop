@@ -455,7 +455,7 @@ a:hover, a:active, a:focus {
 .product-main-img {
     position: relative;
     top: 50px;
-    margin-bottom: 20px
+    margin-bottom: 50px;
 }
 
 div.product-main-img >img {
@@ -465,7 +465,7 @@ div.product-main-img >img {
 .product-gallery {
     margin-bottom: 25px;
     margin-left: -15px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .product-gallery img {
@@ -510,7 +510,6 @@ div.product-main-img >img {
     border: 0;
     color: #fff;
     min-height: 40px;
-    width: 145px;
     font-size: 13pt;
     padding: 6px 25px;
     display: inline-block
@@ -546,7 +545,9 @@ form.cart {
     background: none repeat scroll 0 0 #795743;
 }
 
-.product-tab li.active a {
+.product-tab li.active a,
+.add_to_cart_button > a
+{
     color: #fff
 }
 
@@ -565,7 +566,8 @@ form.cart {
     text-decoration: none
 }
 
-.tab-content h2 {
+.tab-content h2,
+.rating-wrap-post {
     font-size: 20px
 }
 
@@ -590,9 +592,6 @@ form.cart {
     font-weight: 700
 }
 
-.rating-wrap-post {
-    font-size: 20px
-}
 
 .submit-review textarea {
     height: 105px
@@ -602,10 +601,9 @@ form.cart {
 }
 
 .related-products-title {
-    margin-left: 20px;
+    margin: 50px 0 20px 30px;
     color: #feae52;
     font-size: 25px;
-    margin-bottom: 30px;
     text-transform: uppercase
 }
 .pr-related{
@@ -623,4 +621,13 @@ form.cart {
     height: 50px;
 }
 
-
+ins{
+    font-size: 35px;
+}
+div.product-inner-price > del{
+    color: #d0c8c4;
+    font-size: 30px;
+}
+.list-group-item{
+    border: none;
+}

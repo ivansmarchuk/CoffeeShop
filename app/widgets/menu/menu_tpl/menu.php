@@ -1,4 +1,4 @@
-<li >
+<li  class = "list-group-item">
     <a href="?id=<?=$id;?>"><?=$category['title'];?></a>
     <?php if(isset($category['childs'])): ?>
         <ul>

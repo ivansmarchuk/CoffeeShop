@@ -1,5 +1,5 @@
 <?php //$parent = isset($category['childs']); ?>
-<li >
+<li  class = "list-group-item">
     <a href="category/<?=$category['alias'];?>"><?=$category['title'];?></a>
     <?php if(isset($category['childs'])): ?>
         <ul>

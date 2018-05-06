@@ -19,7 +19,7 @@ class Menu
     protected $menuHtml;
     protected $tpl;
     protected $container = 'ul';
-    protected $class = 'sidebar-list-check';
+    protected $class = 'list-group sidebar-list-check';
     protected $table = 'category';
     protected $cashe = 3600;
     protected $casheKey = 'ishop_menu';
