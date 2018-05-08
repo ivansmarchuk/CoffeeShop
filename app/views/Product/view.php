@@ -3,9 +3,11 @@
 ?>
 <div class="row product-wrap">
     <div class="product-breadcroumb">
+        <?= $breadcrumbs;?>
+        <!--
         <a href="">Home</a>
         <a href="category/<?= $cats[$product->category_id]['alias'] ;?>"><?= $cats[$product->category_id]['title']?></a>
-        <a href=""><?= $product->title;?></a>
+        <a href=""><?= $product->title;?></a>-->
     </div>
     <div class="col-sm-5">
         <div class="product-images">

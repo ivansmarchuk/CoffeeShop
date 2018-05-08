@@ -8,6 +8,7 @@
 namespace app\controllers;
 
 
+use app\models\Breadcrumbs;
 use app\models\Product;
 use RedBeanPHP\R;
 
@@ -23,6 +24,9 @@ class ProductController extends AppController
         if (!$product) {
             throw new \Exception('Seite wurde nicht gefunden', 404);
         }
+
+        $breadcrumbs = Breadcrumbs::getBreadcrumbs($product->category_id, $product->title);
+
 
         //selects from database related products for the product overview page
         $related = R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ?", [$product->id]);
@@ -41,7 +45,7 @@ class ProductController extends AppController
 
 
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product', 'country', 'related', 'recentlyViewed'));
+        $this->set(compact('product', 'country', 'related', 'recentlyViewed', 'breadcrumbs'));
 
     }
 

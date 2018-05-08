@@ -42,7 +42,7 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="<?= PATH; ?>">Home</a></li>
+                                <li><a href="<?= PATH; ?>">Startseite</a></li>
                                 <li><a href="#">Über Uns</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -84,7 +84,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="#"><img src="img/logo.png" height="60" width="250" alt=""></a>
+                            <a href="<?= PATH; ?>"><img src="img/logo.png" height="60" width="250" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
