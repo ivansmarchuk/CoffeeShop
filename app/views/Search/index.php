@@ -4,7 +4,7 @@
                 <div class="product-breadcroumb">
 
         <a href="<?= PATH ;?>">Startseite</a>
-        <a>Ergebnisse</a>
+                    <a>Ergebnisse für  "<b><?= $query ;?></b>"</a>
                 </div>
                 <?php if(!empty($products)): ?>
 

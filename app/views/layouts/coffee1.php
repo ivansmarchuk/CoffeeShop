@@ -43,7 +43,7 @@
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="#">Über Uns</a></li>
-                                <li><a href="#">Versand</a></li>
+                                <li><a href="shipping/shipping">Versand</a></li>
 
                                 <li><a href="#">Contact</a></li>
                             </ul>
