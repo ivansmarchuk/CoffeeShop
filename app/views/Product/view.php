@@ -26,11 +26,14 @@
                     <ins style="color:red">&nbsp;&nbsp;&nbsp;-<?= round((1-($product->price)/($product->old_price))*100, 0); ?>%</ins>
                 <?php endif; ?>
             </div>
+            <div><span class="versand_link">inkl. MwSt. <a class=" " target="_blank" href="https://www.henrys.coffee/versandkosten/">zzgl. Versandkosten</a></span></div>
+            <div class ="variations">250g, ungemahlen</div>
+
             <form action="" class="cart">
                 <div class="quantity">
                     <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                </div>
-                <button class="add_to_cart_button btn btn-default btn-sm" type="submit"><a id="productAdd" data-id="<?= $product->id;?>" href="cart/add?<?= $product->id;?>" class="none_style">Kaufen</a></button>
+                </div><a href="cart/add?id=<?= $product->id;?>" class="add-to-card-link none_style" id="productAdd" data-id="<?= $product->id;?>" >
+                <button class="add_to_cart_button btn btn-default" type="submit">Kaufen</button></a>
             </form>
             <div class="product-inner-category">
                 <p>LAND: <a href="category/<?= $cats[$product->category_id]['alias'] ;?>"><?= $country->title ;?></a>. Lieferzeit: ca. 1-3 Werktage. </p>
@@ -88,7 +91,7 @@
                     <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
                 <?php endif; ?>
 
-                <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small" data-id="<?= $item['id'] ;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
             </div>
         </div>
         <?php endforeach;; ?>
@@ -117,7 +120,7 @@
                             <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
                         <?php endif; ?>
 
-                        <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                        <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small" data-id ="<?= $item['id'] ;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
                     </div>
                 </div>
             <?php endforeach;; ?>

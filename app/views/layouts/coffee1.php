@@ -42,14 +42,14 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="<?= PATH; ?>">Startseite</a></li>
                                 <li><a href="#">Über Uns</a></li>
+                                <li><a href="#">Versand</a></li>
+
                                 <li><a href="#">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#" class="btn pull-right"><span
-                                                class="glyphicon glyphicon-shopping-cart"></span>Zum
-                                        Warenkorb</a></li>
+
+
                                 <!-- <li><a href="../navbar/">Default</a></li>
                                  <li><a href="../navbar-static-top/">Static top</a></li>-->
                                 <li class="dropdown">
@@ -60,6 +60,9 @@
                                             <li><a href="#">Herzlich
                                                     willkommen, <?= h($_SESSION['user']['name']); ?></a></li>
                                             <li role="separator" class="divider"></li>
+                                            <li><a href="#"><span
+                                                            class="glyphicon glyphicon-shopping-cart"></span>
+                                                    Warenkorb</a></li>
                                             <li><a href='#'><span
                                                             class="glyphicon glyphicon-time"></span>Bestellungen</a>
                                             </li>
@@ -112,10 +115,22 @@
         <div class="container">
             <div class="row">
                 <div class="clearfix">
+<!--                --><?//= session_destroy() ;?>
                     <a href="#menu-toggle" class="btn btn-lg" id="menu-toggle"><span
                                 class="glyphicon glyphicon-menu-hamburger"></span>Menu</a>
-                    <a href="#" class="btn pull-right"><span class="glyphicon glyphicon-shopping-cart"></span>Zum
-                        Warenkorb</a>
+
+                    <a href="cart/show" onclick="getCart(); return false;" class="btn pull-right"
+                       style="display: flex;">Warenkorb <span class="glyphicon glyphicon-shopping-cart">
+                        </span>
+                        <?php if (!empty($_SESSION['cart'])): ?>
+                            <span id="checkout_items" class="checkout_items"><?= $_SESSION['cart.qty']; ?></span>
+                        <?php else: ?>
+                            <span class="checkout_items chckt_def"
+                                  style="text-transform: none">0</span>
+                        <?php endif; ?>
+                    </a>
+
+
                 </div>
 
             </div>
@@ -176,7 +191,7 @@
 
 
                                 </div>
-
+<!--                                --><?//= session_destroy() ;?>
                                 <?= $content; ?>
 
 
@@ -194,8 +209,28 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Warenkorb</h4>
 
 
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Weiter Shoppen</button>
+                <a href="cart/view" type="button" class="btn btn-primary btn_wrkb">Rechnung</a>
+                <button type="button" class="btn btn-danger" onclick="clearCart()">Warenkorb leeren</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -212,14 +247,8 @@
     });
 
 </script>
-<script type="text/javascript" src="js/my.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
-<?php
-$logs = \RedBeanPHP\R::getDatabaseAdapter()
-    ->getDatabase()
-    ->getLogger();
 
-debug($logs);
-?>
 </body>
 </html>

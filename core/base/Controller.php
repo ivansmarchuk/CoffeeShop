@@ -52,6 +52,21 @@ abstract class Controller
 
     }
 
+    /**
+     * checks which request came in: asynchronous or not
+     * @return bool true, false
+     */
+    public function isAjax() {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+    }
 
-
+    /**
+     * @param $view to be uploaded
+     * @param array $vars
+     */
+    public function loadView($view, $vars = []){
+        extract($vars);
+        require APP . "/views/{$this->prefix}{$this->controller}/{$view}.php";
+        die;
+    }
 }

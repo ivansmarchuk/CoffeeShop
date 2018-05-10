@@ -21,7 +21,6 @@ class Breadcrumbs
     public static function getBreadcrumbs($category_id, $name = ''){
         $cats = App::$app->getProperty('cats');
         $breadcrumbs_array = self::getParts($cats, $category_id);
-        debug($breadcrumbs_array);
         $breadcrumbs = "<a href='" . PATH . "'>Startseite</a>";
         if($breadcrumbs_array){
             foreach($breadcrumbs_array as $alias => $title){

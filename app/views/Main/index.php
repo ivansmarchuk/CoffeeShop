@@ -23,7 +23,7 @@
                             <span class="price price-old"><small>-<?= round((1-($hit->price)/($hit->old_price))*100, 0); ?>%</small></span>
                         <?php endif; ?>
 
-                        <a href="cart/add?id=<?=$hit->id;?>" class="add-to-card-link"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                        <a href="cart/add?id=<?=$hit->id;?>" class="add-to-card-link" data-id="<?=$hit->id;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
                     </div>
                 </div>
                 <?php endforeach; ?>
