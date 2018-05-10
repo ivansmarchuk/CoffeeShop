@@ -18,7 +18,7 @@ $("#typeahead").typeahead({
 },{
     name: 'products',
     display: 'title',
-    limit: 8,
+    limit: 10,
     source: products
 });
 

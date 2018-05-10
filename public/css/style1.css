@@ -75,6 +75,9 @@ a:hover, a:active, a:focus {
     border-radius: 15px;
     background: rgba(208,200,196,0.8);
 }
+.tt-selectable{
+    cursor: pointer;
+}
     /*search icon*/
 #h-searh input[type="submit"] {
     position: absolute;
@@ -365,6 +368,9 @@ a:hover, a:active, a:focus {
     font-weight: 600;
     margin: 0;
 
+}
+.product-search{
+    border: 0.5px solid #d0c8c4;
 }
 
 .cat {
