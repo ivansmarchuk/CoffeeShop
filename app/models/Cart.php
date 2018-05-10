@@ -62,4 +62,5 @@ class Cart extends AppModel
         unset($_SESSION['cart'][$id]);
     }
 
+
 }

@@ -51,7 +51,6 @@ a:hover, a:active, a:focus {
 .header-bottom {
     background-color: #FFF;
     padding: 0 0 25px;
-    border-top: 1px solid #d0c8c4;
 }
 
 /*Search bar*/
@@ -70,8 +69,13 @@ a:hover, a:active, a:focus {
     border: 2px solid #d0c8c4;
     border-radius: 15px;
 }
-
-/*search icon*/
+.tt-menu{
+    width: 100%;
+    padding: 10px 50px 10px 20px;
+    border-radius: 15px;
+    background: rgba(208,200,196,0.8);
+}
+    /*search icon*/
 #h-searh input[type="submit"] {
     position: absolute;
     top: 0;
@@ -353,6 +357,7 @@ a:hover, a:active, a:focus {
 
 .product-footer {
     height: 100px;
+    overflow: hidden;
 }
 
 .product-footer h5 {
@@ -368,24 +373,15 @@ a:hover, a:active, a:focus {
     line-height: 14px;
     color: #333333;
     font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (min-width: 992px) and (max-width: 1200px){
-    .cat{
-        overflow: hidden;
-        /* for set '...' in absolute position */
-        position: relative;
-        width: 200px;
-        text-align: justify;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
     .price > small > del{
         display: none;
     }
 }
-
 
 
 
@@ -426,7 +422,7 @@ a:hover, a:active, a:focus {
 }
 
 .product .bottom-panel {
-    display: flex;
+    /*display: flex;*/
     width: auto;
     height: auto;
     flex-direction: row;
@@ -710,4 +706,7 @@ div.product-inner-price > del{
 
 .del-item{
     cursor: pointer;
+}
+.twitter-typeahead{
+    width: 100%;
 }

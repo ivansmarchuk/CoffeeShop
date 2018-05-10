@@ -91,8 +91,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <form action="#" id="h-searh">
-                            <input type="text" value="Suchbegriff..."/>
+                        <form action="search" id="h-searh" method="get" autocomplete="off">
+                            <input class="typeahead" type="text" id="typeahead" name="s" placeholder="Suchbegriff..."/>
                             <input type="submit" value=""/>
                         </form>
                     </div>
@@ -239,8 +239,10 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/typeahead.bundle.js"></script>
 <script src="js/validator.js"></script>
 <script>
+    var path = '<?=PATH;?>';
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
