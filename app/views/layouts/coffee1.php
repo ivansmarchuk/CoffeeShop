@@ -151,7 +151,7 @@
                         <ul class="sidebar-list">
                             <li><a href="#">Neuheiten</a></li>
                             <li><a href="#">Meistverkauft</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
+                            <li><a href="discount/view"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
 
                         </ul>
                     </div>
