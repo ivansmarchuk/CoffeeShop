@@ -1,11 +1,17 @@
-    <div class="row">
-        <div class="col-md-12 content">
-            <div class="row product-wrap">
-                <div class="product-breadcroumb">
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="<?= PATH ;?>">Startseite</a></li>
+                <li>Ergebnisse für  "<b><?= $query ;?></b>"</li>
+            </ol>
+        </div>
+    </div>
+</div>
 
-        <a href="<?= PATH ;?>">Startseite</a>
-                    <a>Ergebnisse für  "<b><?= $query ;?></b>"</a>
-                </div>
+<div class="row">
+        <div class="col-md-12 content">
+            <div class="row">
                 <?php if(!empty($products)): ?>
 
                     <?php foreach ($products as $product): ?>
@@ -33,9 +39,6 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-
-
-
                <?php endif; ?>
 
 

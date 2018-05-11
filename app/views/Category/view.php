@@ -1,11 +1,18 @@
+
+<div class="breadcrumbs">
+    <div class="container brdcrb">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+            <?= $breadcrumbs;?>
+            </ol>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-12 content">
-        <div class="row product-wrap">
-            <div class="product-breadcroumb">
+        <div class="row">
 
-                <a href="<?= PATH ;?>">Startseite</a>
-                <a>Land</a>
-            </div>
             <?php if(!empty($products)): ?>
 
                 <?php foreach ($products as $product): ?>
@@ -38,9 +45,12 @@
             <h3 style="display: block; margin: 20px 40px; ">In dieser Kategorie gibt es derzeit keine Produkte.</h3>
             <?php endif; ?>
 
-
-
-
         </div>
     </div>
+</div>
+<div class="text-center">
+    <p style="margin-top: 10px;">(<?=count($products)?> Produkt(e) aus <?=$total;?>)</p>
+    <?php if($pagination->countPages > 1): ?>
+        <?=$pagination;?>
+    <?php endif; ?>
 </div>

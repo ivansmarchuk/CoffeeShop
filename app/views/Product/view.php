@@ -4,10 +4,6 @@
 <div class="row product-wrap">
     <div class="product-breadcroumb">
         <?= $breadcrumbs;?>
-        <!--
-        <a href="">Home</a>
-        <a href="category/<?= $cats[$product->category_id]['alias'] ;?>"><?= $cats[$product->category_id]['title']?></a>
-        <a href=""><?= $product->title;?></a>-->
     </div>
     <div class="col-sm-5">
         <div class="product-images">
@@ -26,7 +22,7 @@
                     <ins style="color:red">&nbsp;&nbsp;&nbsp;-<?= round((1-($product->price)/($product->old_price))*100, 0); ?>%</ins>
                 <?php endif; ?>
             </div>
-            <div><span class="versand_link">inkl. MwSt. <a class=" " target="_blank" href="https://www.henrys.coffee/versandkosten/">zzgl. Versandkosten</a></span></div>
+            <div><span class="versand_link">inkl. MwSt. <a class=" " target="_blank" href="shipping/shipping">zzgl. Versandkosten</a></span></div>
             <div class ="variations">250g, ungemahlen</div>
 
             <form action="" class="cart">

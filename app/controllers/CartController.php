@@ -9,6 +9,8 @@ namespace app\controllers;
 
 
 use app\models\Cart;
+use app\models\Order;
+use app\models\User;
 use RedBeanPHP\R;
 
 class CartController extends AppController
@@ -66,4 +68,37 @@ class CartController extends AppController
         $this->loadView('cart_modal');
     }
 
+    public function viewAction(){
+        $this->setMeta('Warenkorb');
+    }
+
+    public function checkoutAction(){
+        if(!empty($_POST)){
+            // reg user
+            if(!User::checkAuth()){
+                $user = new User();
+                $data = $_POST;
+                $user->load($data);
+                if(!$user->validate($data) || !$user->checkUnique()){
+                    $user->getErrors();
+                    $_SESSION['form_data'] = $data;
+                    redirect();
+                }else{
+                    $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
+                    if(!$user_id = $user->save('user')){
+                        $_SESSION['error'] = 'Fahler!';
+                        redirect();
+                    }
+                }
+            }
+
+            // Saves a order
+            $data['user_id'] = isset($user_id) ? $user_id : $_SESSION['user']['id'];
+            $data['note'] = !empty($_POST['note']) ? $_POST['note'] : '';
+            $user_email = isset($_SESSION['user']['email']) ? $_SESSION['user']['email'] : $_POST['email'];
+            $order_id = Order::saveOrder($data);
+            Order::mailOrder($order_id, $user_email);
+        }
+        redirect();
+    }
 }

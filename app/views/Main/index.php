@@ -1,8 +1,14 @@
 <?php if($hits): ?>
     <div class="row">
         <div class="col-md-12 content">
-            <div class="row product-wrap">
-                <?php foreach ($hits as $hit): ?>
+            <div class="row ">
+                <?php
+                if (sizeof($hits) > 5)
+                    $output = array_reverse(array_slice($hits, -6, 6, true));
+                else
+                    $output = $hits;
+
+                foreach ($output as $hit): ?>
                 <div class="col-md-4 product">
                     <div class="product-img">
                         <a href="product/<?= $hit->alias;?>"><img src="img/<?= $hit->img;?>" height="218" alt=""></a>
@@ -31,3 +37,4 @@
         </div>
     </div>
 <?php endif; ?>
+

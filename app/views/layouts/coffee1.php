@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style1.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Footer-white.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/img/coffeebean-16.png' />
 
 
 </head>
@@ -43,7 +45,6 @@
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="#">Über Uns</a></li>
-                                <li><a href="shipping/shipping">Versand</a></li>
 
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -172,7 +173,7 @@
                 <div id="page-content-wrapper">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 mn">
                                 <div class="container">
 
                                     <?php if (isset($_SESSION['error'])): ?>
@@ -203,10 +204,30 @@
                 </div>
                 <!-- /#page-content-wrapper -->
             </div>
+
             <!-- /#wrapper -->
         </div>
+
     </div>
 </div>
+<!-- FOOTER -->
+<footer id="myFooter">
+    <div class="container">
+        <ul>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="shipping/shipping">Versand</a></li>
+            <li><a href="https://github.com/ivansmarchuk/CoffeeShop">Github</a></li>
+        </ul>
+        <p class="footer-copyright">© 2018 - <?php echo date("Y"); ?> Coffeeshop is a project by Ivan Marchuk.</p>
+    </div>
+    <div class="footer-social">
+        <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+    </div>
+</footer>
+
 
 
 <!-- Modal -->
@@ -246,6 +267,7 @@
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+        $("#page-content-wrapper").toggleClass("self");
     });
 
 </script>

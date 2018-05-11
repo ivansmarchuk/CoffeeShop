@@ -21,14 +21,14 @@ class Breadcrumbs
     public static function getBreadcrumbs($category_id, $name = ''){
         $cats = App::$app->getProperty('cats');
         $breadcrumbs_array = self::getParts($cats, $category_id);
-        $breadcrumbs = "<a href='" . PATH . "'>Startseite</a>";
+        $breadcrumbs = "<li><a href='" . PATH . "'>Startseite</a></li>";
         if($breadcrumbs_array){
             foreach($breadcrumbs_array as $alias => $title){
-                $breadcrumbs .= "<a href='" . PATH . "/category/{$alias}'>{$title}</a>";
+                $breadcrumbs .= "<li><a href='" . PATH . "/category/{$alias}'>{$title}</a></li>";
             }
         }
         if($name){
-            $breadcrumbs .= "<a>$name</a>";
+            $breadcrumbs .= "<li><a>$name</a></li>";
         }
         return $breadcrumbs;
     }

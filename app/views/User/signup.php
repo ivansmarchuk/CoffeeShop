@@ -1,3 +1,14 @@
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="<?= PATH ?>">HauptSeite</a></li>
+                <li>Registrieren</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
 <?php if (!isset($_SESSION['success'])): ?>
     <div class="register-top heading">
         <h2>Jetzt kostenlos registrieren</h2>
