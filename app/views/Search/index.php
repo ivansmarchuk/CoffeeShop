@@ -17,8 +17,10 @@
                     <?php foreach ($products as $product): ?>
                         <div class="col-md-4 product product-search">
                             <div class="product-img">
-                                <a href="product/<?= $product->alias;?>"><img src="img/<?= $product->img;?>" height="218" alt=""></a>
-                                <span class="glyphicon glyphicon-eye-open review"></span>
+                                <a href="product/<?= $product->alias;?>"><img src="img/<?= $product->img;?>" height="218" alt="">
+                                    <span class="glyphicon glyphicon-eye-open review"></span>
+                                </a>
+
                             </div>
                             <div class="product-footer">
                                 <a href="product/<?= $product->alias;?>"><h5><?= $product->title;?></h5></a>

@@ -1,10 +1,16 @@
 <?php
     $cats = \coffeeshop\App::$app->getProperty('cats');
 ?>
-<div class="row product-wrap">
-    <div class="product-breadcroumb">
-        <?= $breadcrumbs;?>
+<div class="breadcrumbs">
+    <div class="container brdcrb">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <?= $breadcrumbs;?>
+            </ol>
+        </div>
     </div>
+</div>
+<div class="row product-wrap">
     <div class="col-sm-5">
         <div class="product-images">
             <div class="product-main-img" >
@@ -67,61 +73,66 @@
             </div>
         </div>
     </div>
-    <?php if ($related): ?>
-    <div class="col-sm-12">
-        <h2 class="related-products-title">Ähnliche Produkte</h2>
-        <?php foreach ($related as $item): ?>
-        <div class="col-md-4 product pr-related">
-            <div class="product-img product-img-small">
-                <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="168" alt=""></a>
-                <span class="glyphicon glyphicon-eye-open review"></span>
-            </div>
-            <div class=".product-related-footer">
-                <a href="product/<?= $item['alias'] ;?>"><h5><?= $item['title'] ;?></h5></a>
-                <span class="cat">
-        </span>
-            </div>
-            <div class="bottom-panel">
-                <span class="price price-small"><?= $item['price'] ;?> €</span>
-                <?php if($item['old_price']): ?>
-                    <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
-                <?php endif; ?>
 
-                <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small" data-id="<?= $item['id'] ;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-            </div>
-        </div>
-        <?php endforeach;; ?>
-    </div>
-    <?php endif; ?>
-
-
-
-
-    <?php if ($recentlyViewed): ?>
-        <div class="col-sm-12">
-            <h2 class="related-products-title">Ihre zuletzt angesehenen Artikel</h2>
-            <?php foreach ($recentlyViewed as $item): ?>
-                <div class="col-md-3 product pr-related">
-                    <div class="product-img product-img-small">
-                        <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="168" alt=""></a>
-                        <span class="glyphicon glyphicon-eye-open review"></span>
-                    </div>
-                    <div class=".product-related-footer">
-                        <a href="product/<?= $item['alias'] ;?>"><h5><?= $item['title'] ;?></h5></a>
-                        <span class="cat"> </span>
-                    </div>
-                    <div class="bottom-panel">
-                        <span class="price price-small"><?= $item['price'] ;?> €</span>
-                        <?php if($item['old_price']): ?>
-                            <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
-                        <?php endif; ?>
-
-                        <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small" data-id ="<?= $item['id'] ;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
-                    </div>
-                </div>
-            <?php endforeach;; ?>
-        </div>
-    <?php endif; ?>
 
 
 </div>
+<?php if ($related): ?>
+    <div class="col-sm-12">
+        <h2 class="related-products-title">Ähnliche Produkte</h2>
+        <?php foreach ($related as $item): ?>
+            <div class="col-md-4 product pr-related">
+                <div class="product-img product-img-small">
+                    <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="168" alt="">
+                        <span class="glyphicon glyphicon-eye-open review"></span>
+                    </a>
+
+                </div>
+                <div class=".product-related-footer">
+                    <a href="product/<?= $item['alias'] ;?>"><h5><?= $item['title'] ;?></h5></a>
+                    <span class="cat">
+        </span>
+                </div>
+                <div class="bottom-panel">
+                    <span class="price price-small"><?= $item['price'] ;?> €</span>
+                    <?php if($item['old_price']): ?>
+                        <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
+                    <?php endif; ?>
+
+                    <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small" data-id="<?= $item['id'] ;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                </div>
+            </div>
+        <?php endforeach;; ?>
+    </div>
+<?php endif; ?>
+
+
+
+
+<?php if ($recentlyViewed): ?>
+    <div class="col-sm-12">
+        <h2 class="related-products-title">Ihre zuletzt angesehenen Artikel</h2>
+        <?php foreach (array_reverse($recentlyViewed) as $item): ?>
+            <div class="col-md-3 product pr-related">
+                <div class="product-img product-img-small">
+                    <a href="product/<?= $item['alias'] ;?>"><img src="img/<?= $item['img'] ;?>" height="168" alt="">
+                        <span class="glyphicon glyphicon-eye-open review"></span>
+                    </a>
+
+                </div>
+                <div class=".product-related-footer">
+                    <a href="product/<?= $item['alias'] ;?>"><h5><?= $item['title'] ;?></h5></a>
+                    <span class="cat"> </span>
+                </div>
+                <div class="bottom-panel">
+                    <span class="price price-small"><?= $item['price'] ;?> €</span>
+                    <?php if($item['old_price']): ?>
+                        <span class="price price-old price-small" ><small><del><?= $item['old_price'] ;?> €</del></small></span>
+                    <?php endif; ?>
+
+                    <a href="cart/add?id=<?= $item['id'] ;?>" class="add-to-card-link price-small" data-id ="<?= $item['id'] ;?>"><span class="glyphicon glyphicon-shopping-cart"></span>Kaufen</a>
+                </div>
+            </div>
+        <?php endforeach;; ?>
+    </div>
+<?php endif; ?>

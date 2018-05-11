@@ -11,8 +11,10 @@
                 foreach ($output as $hit): ?>
                 <div class="col-md-4 product">
                     <div class="product-img">
-                        <a href="product/<?= $hit->alias;?>"><img src="img/<?= $hit->img;?>" height="218" alt=""></a>
-                        <span class="glyphicon glyphicon-eye-open review"></span>
+                        <a href="product/<?= $hit->alias;?>"><img src="img/<?= $hit->img;?>" height="218" alt="">
+                            <span class="glyphicon glyphicon-eye-open review"></span>
+                        </a>
+
                     </div>
                     <div class="product-footer">
                         <a href="product/<?= $hit->alias;?>"><h5><?= $hit->title;?></h5></a>
