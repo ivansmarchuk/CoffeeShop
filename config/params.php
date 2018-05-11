@@ -9,6 +9,9 @@ return [
     'admin_email' => 'ivansmarchuk@gmail.com',
     'shop_name' => 'Coffee Shop',
     'pagination' => 3,
-    'smtp_login' => '',
-    'smtp_password' => '',
+    'smtp_host' => 'smtp.web.de',
+    'smtp_port' => '587',
+    'smtp_protocol' => 'TLS',
+    'smtp_login' => 'CoffeeShop.master@web.de',
+    'smtp_password' => 'CoffeeShop123',
 ];

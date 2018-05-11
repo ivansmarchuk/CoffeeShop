@@ -10,6 +10,7 @@
   },
   "require": {
     "vlucas/valitron": "^1.4",
-    "gabordemooij/redbean": "^5.1"
+    "gabordemooij/redbean": "^5.1",
+    "swiftmailer/swiftmailer": "^6.0"
   }
 }
