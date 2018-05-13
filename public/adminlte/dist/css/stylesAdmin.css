@@ -1,0 +1,14 @@
+
+.btn-pagination .active > a
+{
+    background-color: #795743;
+    border-color: #795743;
+}
+.btn_wrkb:hover, .btn_wrkb:active, .btn_wrkb:focus,
+.btn-pagination .active > a:hover,
+.btn-pagination .active > a:active,
+.btn-pagination .active > a:focus
+{
+    background-color: #d0c8c4;
+    border-color: #d4d4d4;
+}

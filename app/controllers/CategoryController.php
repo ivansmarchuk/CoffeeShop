@@ -16,7 +16,10 @@ use RedBeanPHP\R;
 
 class CategoryController extends AppController
 {
-
+    /**
+     * for generating viewpage on the web site
+     * @throws \Exception
+     */
     public function viewAction()
     {
         $alias = $this->route['alias'];

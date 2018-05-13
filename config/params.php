@@ -8,6 +8,7 @@
 return [
     'admin_email' => 'ivansmarchuk@gmail.com',
     'shop_name' => 'Coffee Shop',
+    //how much products shows on the page
     'pagination' => 3,
     'smtp_host' => 'smtp.web.de',
     'smtp_port' => '587',

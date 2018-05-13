@@ -4,7 +4,7 @@
             <div class="row ">
                 <?php
                 if (sizeof($hits) > 5)
-                    $output = array_reverse(array_slice($hits, -6, 6, true));
+                    $output = array_slice($hits, -6, 6, true);
                 else
                     $output = $hits;
 

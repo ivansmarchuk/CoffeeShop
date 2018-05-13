@@ -14,6 +14,10 @@ use RedBeanPHP\R;
 
 class ProductController extends AppController
 {
+    /**
+     * shows product from database on the web site
+     * @throws \Exception
+     */
     public function viewAction()
     {
         $alias = $this->route['alias'];

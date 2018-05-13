@@ -50,6 +50,19 @@ abstract class Model {
     }
 
     /**
+     * table update in database
+     * @param $table table for update in db
+     * @param $id id in table
+     * @return int|string new string
+     */
+    public function update($table, $id){
+        $bean = R::load($table, $id);
+        foreach($this->attributes as $name => $value){
+            $bean->$name = $value;
+        }
+        return R::store($bean);
+    }
+    /**
      * function for valitate form input data using valitron
      * @param $data
      */

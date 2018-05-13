@@ -17,7 +17,9 @@ use \RedBeanPHP\R as R;
 
 class MainController extends AppController
 {
-
+    /**
+     * main view render
+     */
     public function indexAction()
     {
 

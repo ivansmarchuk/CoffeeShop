@@ -10,6 +10,7 @@ namespace app\widgets\menu;
 
 use coffeeshop\App;
 use coffeeshop\Cache;
+use RedBeanPHP\R;
 
 class Menu
 {
@@ -21,8 +22,8 @@ class Menu
     protected $container = 'ul';
     protected $class = 'list-group sidebar-list-check';
     protected $table = 'category';
-    protected $cashe = 3600;
-    protected $casheKey = 'ishop_menu';
+    protected $cashe = 0;
+    protected $casheKey = 'coffeeshop_menu';
     protected $attrs = [];
     protected $prepend = '';
 

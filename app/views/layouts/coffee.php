@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <base href="/coffeeshop/">
+    <link rel="shortcut icon" href="img/coffeebean-16.png" type="image/png" />
     <?= $this->getMeta(); ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +15,15 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
     <link rel="stylesheet" id="google_font_3-css" href="https://fonts.googleapis.com/css?family=Patua+One&amp;ver=1.0"
           type="text/css" media="all">
-    <link href="css/sidebar.css" rel="stylesheet">
-    <link href="css/sidebar-bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Footer-white.css">
+
+
 
 </head>
 <body>
-<div id="wrapper">
+
+<div class="wrapper">
     <header id="header">
         <!--TOP MENU-->
         <div class="container">
@@ -36,18 +38,18 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Coffee Shop</a>
+                            <a class="navbar-brand" href="<?= PATH; ?>">Coffee Shop</a>
+
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Home</a></li>
                                 <li><a href="#">Über Uns</a></li>
+
                                 <li><a href="#">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#" class="btn pull-right"><span
-                                                class="glyphicon glyphicon-shopping-cart"></span>Zum
-                                        Warenkorb</a></li>
+
+
                                 <!-- <li><a href="../navbar/">Default</a></li>
                                  <li><a href="../navbar-static-top/">Static top</a></li>-->
                                 <li class="dropdown">
@@ -58,9 +60,12 @@
                                             <li><a href="#">Herzlich
                                                     willkommen, <?= h($_SESSION['user']['name']); ?></a></li>
                                             <li role="separator" class="divider"></li>
-                                            <li><a href='#'><span
-                                                            class="glyphicon glyphicon-time"></span>Bestellungen</a>
-                                            </li>
+<!--                                            <li><a href="#"><span-->
+<!--                                                            class="glyphicon glyphicon-shopping-cart"></span>-->
+<!--                                                    Warenkorb</a></li>-->
+<!--                                            <li><a href='#'><span-->
+<!--                                                            class="glyphicon glyphicon-time"></span>Bestellungen</a>-->
+<!--                                            </li>-->
                                             <li role="separator" class="divider"></li>
                                             <li><a href="user/logout">Ausloggen</a></li>
                                         <?php else: ?>
@@ -82,12 +87,12 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="#"><img src="img/logo.png" height="60" width="250" alt=""></a>
+                            <a href="<?= PATH; ?>"><img src="img/logo.png" height="60" width="250" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <form action="#" id="h-searh">
-                            <input type="text" value="Suchbegriff..."/>
+                        <form action="search" id="h-searh" method="get" autocomplete="off">
+                            <input class="typeahead" type="text" id="typeahead" name="s" placeholder="Suchbegriff..."/>
                             <input type="submit" value=""/>
                         </form>
                     </div>
@@ -105,127 +110,161 @@
         </div>
     </header>
 
-    <!--MAIN MENU-->
+    <!-- Sidebar -->
     <div class="panel">
         <div class="container">
             <div class="row">
-                <div class="dropdown">
-                    <!--Category MENU-->
-                    <ul class="panel-menu-wrap clearfix">
-                        <li>
-                            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#"
-                               class="btn"><span
-                                        class="glyphicon glyphicon-align-justify"></span>Alle Kategorien<span
-                                        class="caret"></span></a>
-                            <ul class="dropdown-menu panel-menu" role="menu" aria-labelledby="dLabel">
-                                <li><a href="#">Neuheiten</a></li>
-                                <li><a href="#">Meistverkauft</a></li>
+                <div class="clearfix">
+<!--                --><?//= session_destroy() ;?>
+                    <a href="#menu-toggle" class="btn btn-lg" id="menu-toggle"><span
+                                class="glyphicon glyphicon-menu-hamburger"></span>Menu</a>
 
-                                <li><a href="#"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li><a href="#">Brasilien</a></li>
-                                <li><a href="#">Vietnam</a></li>
-                                <li><a href="#">Indonesien</a></li>
-                                <li><a href="#">Kolumbien</a></li>
-                                <li><a href="#">Äthiopien</a></li>
-                                <li><a href="#">Indien</a></li>
-                            </ul>
-                        </li>
-                        <li><span class="btn sp">Vietnam</span></li>
-                    </ul>
+                    <a href="cart/show" onclick="getCart(); return false;" class="btn pull-right"
+                       style="display: flex;">Warenkorb <span class="glyphicon glyphicon-shopping-cart">
+                        </span>
+                        <?php if (!empty($_SESSION['cart'])): ?>
+                            <span id="checkout_items" class="checkout_items"><?= $_SESSION['cart.qty']; ?></span>
+                        <?php else: ?>
+                            <span class="checkout_items chckt_def"
+                                  style="text-transform: none">0</span>
+                        <?php endif; ?>
+                    </a>
 
 
                 </div>
 
-                <!--<a href="#" class="btn"><span class="glyphicon glyphicon-align-justify"></span>Alle Kategorien</a>-->
-
             </div>
+            <!--<a href="#" class="btn"><span class="glyphicon glyphicon-align-justify"></span>Alle Kategorien</a>-->
         </div>
     </div>
-    <!--MAIN BODY-->
-    <div class="container">
-        <div class="row relative">
-            <div data-sidebar="true" data-force-toggle="true" data-locked="true"
-                 data-hammer-scrollbar="true" class="sidebar-trigger sidebar-force-open sidebar-locked">
-                <a class="sidebar-toggle" href="#">
-                    <span class="sr-only">Sidebar toggle</span>
-                    <i class="fa fa-sidebar-toggle"></i>
-                </a>
+    <!-- Sidebar Holder -->
 
-                <div class="sidebar-wrapper sidebar-default sidebar-open-init">
+    <div class="container">
+        <div class="row">
+
+            <div id="wrapper" class="main-wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
                     <div class="sidebr-item">
                         <h4 class="sidebar-title">Kategorien</h4>
                         <ul class="sidebar-list">
-                            <li><a href="#">Neuheiten</a></li>
                             <li><a href="#">Meistverkauft</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
+                            <li><a href="newproducts/view">Neuheiten</a></li>
+                            <li><a href="discount/view"><span class="glyphicon glyphicon-tags"></span>Aktionen</a></li>
 
                         </ul>
-
-
                     </div>
-
                     <div class="sidebr-item">
                         <h4 class="sidebar-title">Land</h4>
-                        <ul class="sidebar-list-check">
-                            <li>
-                                <input id="med" type="checkbox"/>
-                                <label for="med">Land_1</label>
-                            </li>
-                            <li>
-                                <input id="med" type="checkbox"/>
-                                <label for="med">Land_2</label>
-                            </li>
-                            <li>
-                                <input id="med" type="checkbox"/>
-                                <label for="med">Land_3</label>
-                            </li>
-                            <li>
-                                <input id="med" type="checkbox"/>
-                                <label for="med">Land_4</label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="sidebr-item">
-                        <h4 class="sidebar-title">Preis</h4>
+                        <?php new \app\widgets\menu\Menu([
+                            'tpl' => WWW . '/menu/menu.php',
+                            'attrs' => [
+                                'style' => ' ',
+                            ]
+                        ]) ?>
                     </div>
                 </div>
+                <!-- /#sidebar-wrapper -->
+
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 mn">
+                                <div class="container">
+
+                                    <?php if (isset($_SESSION['error'])): ?>
+                                        <div class="alert alert-danger">
+                                            <?php echo $_SESSION['error'];
+                                            unset($_SESSION['error']); ?>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if (isset($_SESSION['success'])): ?>
+                                        <div class="alert alert-success">
+                                            <?php echo $_SESSION['success'];
+                                            unset($_SESSION['success']); ?>
+                                        </div>
+                                    <?php endif; ?>
+
+
+                                </div>
+<!--                                --><?//= session_destroy() ;?>
+                                <?= $content; ?>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /#page-content-wrapper -->
             </div>
 
-            <div class="container">
+            <!-- /#wrapper -->
+        </div>
 
-                <div class="col-md-12">
-                    <?php if (isset($_SESSION['error'])): ?>
-                        <div class="alert alert-danger">
-                            <?php echo $_SESSION['error'];
-                            unset($_SESSION['error']); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (isset($_SESSION['success'])): ?>
-                        <div class="alert alert-success">
-                            <?php echo $_SESSION['success'];
-                            unset($_SESSION['success']); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+    </div>
+</div>
+<!-- FOOTER -->
+<footer id="myFooter">
+    <div class="container">
+        <ul>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="shipping/shipping">Versand</a></li>
+            <li><a href="https://github.com/ivansmarchuk/CoffeeShop">Github</a></li>
+        </ul>
+        <p class="footer-copyright">© 2018 - <?php echo date("Y"); ?> Coffeeshop is a project by Ivan Marchuk.</p>
+    </div>
+</footer>
 
-                <?= $content; ?>
+
+
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Warenkorb</h4>
+
+
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Weiter Shoppen</button>
+                <a href="cart/view" type="button" class="btn btn-primary btn_wrkb">Rechnung</a>
+                <button type="button" class="btn btn-danger" onclick="clearCart()">Warenkorb leeren</button>
             </div>
         </div>
     </div>
 </div>
-
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.1.3/hammer.min.js"></script>
+<script src="js/jquery.js"></script>
 
-<script src="js/sidebar.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/typeahead.bundle.js"></script>
 <script src="js/validator.js"></script>
+<script>
+    var path = '<?=PATH;?>';
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $("#page-content-wrapper").toggleClass("self");
+    });
+
+</script>
 <script type="text/javascript" src="js/main.js"></script>
+
+
 </body>
 </html>

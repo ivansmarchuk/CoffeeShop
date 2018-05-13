@@ -13,6 +13,13 @@ class Cache
 {
     use TSingletone;
 
+    /**
+     * saves cache into files unten tmp
+     * @param $key key id
+     * @param $data information
+     * @param int $seconds duration
+     * @return bool flag
+     */
     public function set($key, $data, $seconds = 3600)
     {
         if ($seconds) {
